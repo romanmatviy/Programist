@@ -241,7 +241,7 @@ def generate_service_index_page(service_slug, service_name):
     </footer>
 
     <!-- Scripts -->
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js?ver=1"></script>
 </body>
 </html>
 """
@@ -460,7 +460,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
     </footer>
 
     <!-- Scripts -->
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js?ver=1"></script>
 </body>
 </html>
 """
