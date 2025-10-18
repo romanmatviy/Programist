@@ -75,7 +75,7 @@ def generate_service_index_page(service_slug, service_name):
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?ver=1">
     
     <!-- Open Graph -->
     <meta property="og:title" content="{{ service_name }} | Програміст Роман (RomanDev)">
@@ -293,7 +293,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?ver=1">
     
     <!-- Open Graph -->
     <meta property="og:title" content="{{ service_name }} в {{ geo_name }} | Програміст Роман (RomanDev)">
