@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
               "addressCountry": "Україна"
             },
             "telephone": element.dataset.phone || "+380000000000",
-            "email": element.dataset.email || "contact@programist.matviy.pp.ua"
+            "email": element.dataset.email || "info@matviy.pp.ua"
           };
           break;
           
