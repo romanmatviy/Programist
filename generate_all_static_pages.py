@@ -229,7 +229,7 @@ def generate_service_index_page(service_slug, service_name):
                 <div class="footer-col">
                     <h3>Контакти</h3>
                     <ul>
-                        <li>Телефон: <a href="tel:+380000000000">+38 (093) 88-00-822</a></li>
+                        <li>Телефон: <a href="tel:+380938800822">+38 (093) 88-00-822</a></li>
                         <li>Email: <a href="mailto:info@matviy.pp.ua">info@matviy.pp.ua</a></li>
                     </ul>
                 </div>
@@ -448,7 +448,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                 <div class="footer-col">
                     <h3>Контакти</h3>
                     <ul>
-                        <li>Телефон: <a href="tel:+380000000000">+38 (093) 88-00-822</a></li>
+                        <li>Телефон: <a href="tel:+380938800822">+38 (093) 88-00-822</a></li>
                         <li>Email: <a href="mailto:info@matviy.pp.ua">info@matviy.pp.ua</a></li>
                     </ul>
                 </div>

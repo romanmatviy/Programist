@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
               "addressRegion": element.dataset.region || "Львівська область",
               "addressCountry": "Україна"
             },
-            "telephone": element.dataset.phone || "+380000000000",
+            "telephone": element.dataset.phone || "+380938800822",
             "email": element.dataset.email || "info@matviy.pp.ua"
           };
           break;
