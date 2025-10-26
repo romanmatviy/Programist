@@ -247,7 +247,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     </footer>
 
     <!-- Scripts -->
-    <script src="/js/main.js?ver=1"></script>
+    <script src="/js/main.js?ver=2"></script>
 </body>
 </html>
 """

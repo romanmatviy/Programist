@@ -154,7 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
     status.textContent = '';
     status.classList.remove('success','error');
     try {
-      const res = await fetch('/contact.php', {
+      const targetUrl = 'https://bot.programist.top/api/contact.php'; 
+      const res = await fetch(targetUrl, {
         method: 'POST',
         body: serializeForm(form)
       });
