@@ -19,7 +19,7 @@ services = {
     "opencart": "OpenCart",
     "laravel": "Laravel",
     "vue": "Vue.js",
-    "seo-optimizatsiya": "SEO-оптимізація",
+    "seo-optimizatsiya": "SEO оптимізація",
     "pidtrymka-saitiv": "Підтримка сайтів",
     "crm-erp": "CRM/ERP системи"
 }
@@ -174,8 +174,8 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                     <li><strong>Підтримка</strong> – подальший розвиток та обслуговування</li>
                 </ol>
                 
-                <h2>SEO-оптимізація {{ city_in }}</h2>
-                <p>Всі мої проекти створюються з урахуванням вимог пошукових систем. Це дозволяє досягти високих позицій у результатах пошуку за ключовими запитами, пов'язаними з вашим бізнесом {{ city_in }}. SEO-оптимізація включає:</p>
+                <h2>SEO оптимізація {{ city_in }}</h2>
+                <p>Всі мої проекти створюються з урахуванням вимог пошукових систем. Це дозволяє досягти високих позицій у результатах пошуку за ключовими запитами, пов'язаними з вашим бізнесом {{ city_in }}. SEO оптимізація включає:</p>
                 <ul>
                     <li>Технічну оптимізацію</li>
                     <li>Створення SEO-friendly структури</li>
@@ -219,7 +219,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                         <li><a href="/wordpress/ukraine">WordPress розробка</a></li>
                         <li><a href="/laravel/ukraine">Laravel розробка</a></li>
                         <li><a href="/crm-erp/ukraine">CRM/ERP системи</a></li>
-                        <li><a href="/seo-optimizatsiya/ukraine">SEO-оптимізація</a></li>
+                        <li><a href="/seo-optimizatsiya/ukraine">SEO оптимізація</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -429,7 +429,7 @@ service_accusative = {
     "opencart": "OpenCart",
     "laravel": "Laravel",
     "vue.js": "Vue.js",
-    "seo-оптимізація": "SEO-оптимізацію",
+    "SEO оптимізація": "SEO-оптимізацію",
     "підтримка сайтів": "підтримку сайтів",
     "crm/erp системи": "CRM/ERP системи"
 }

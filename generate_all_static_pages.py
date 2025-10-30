@@ -170,8 +170,8 @@ def generate_service_index_page(service_slug, service_name):
                     <li><strong>Підтримка</strong> – подальший розвиток та обслуговування</li>
                 </ol>
                 
-                <h2>SEO-оптимізація</h2>
-                <p>Всі мої проекти створюються з урахуванням вимог пошукових систем. Це дозволяє досягти високих позицій у результатах пошуку за ключовими запитами, пов'язаними з вашим бізнесом. SEO-оптимізація включає:</p>
+                <h2>SEO оптимізація</h2>
+                <p>Всі мої проекти створюються з урахуванням вимог пошукових систем. Це дозволяє досягти високих позицій у результатах пошуку за ключовими запитами, пов'язаними з вашим бізнесом. SEO оптимізація включає:</p>
                 <ul>
                     <li>Технічну оптимізацію</li>
                     <li>Створення SEO-friendly структури</li>
@@ -213,7 +213,7 @@ def generate_service_index_page(service_slug, service_name):
                         <li><a href="/wordpress/ukraine">WordPress розробка</a></li>
                         <li><a href="/laravel/ukraine">Laravel розробка</a></li>
                         <li><a href="/crm-erp/ukraine">CRM/ERP системи</a></li>
-                        <li><a href="/seo-optimizatsiya/ukraine">SEO-оптимізація</a></li>
+                        <li><a href="/seo-optimizatsiya/ukraine">SEO оптимізація</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -389,8 +389,8 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                     <li><strong>Підтримка</strong> – подальший розвиток та обслуговування</li>
                 </ol>
                 
-                <h2>SEO-оптимізація в {{ geo_name }}</h2>
-                <p>Всі мої проекти створюються з урахуванням вимог пошукових систем. Це дозволяє досягти високих позицій у результатах пошуку за ключовими запитами, пов'язаними з вашим бізнесом в {{ geo_name }}. SEO-оптимізація включає:</p>
+                <h2>SEO оптимізація в {{ geo_name }}</h2>
+                <p>Всі мої проекти створюються з урахуванням вимог пошукових систем. Це дозволяє досягти високих позицій у результатах пошуку за ключовими запитами, пов'язаними з вашим бізнесом в {{ geo_name }}. SEO оптимізація включає:</p>
                 <ul>
                     <li>Технічну оптимізацію</li>
                     <li>Створення SEO-friendly структури</li>
@@ -432,7 +432,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                         <li><a href="/wordpress/ukraine">WordPress розробка</a></li>
                         <li><a href="/laravel/ukraine">Laravel розробка</a></li>
                         <li><a href="/crm-erp/ukraine">CRM/ERP системи</a></li>
-                        <li><a href="/seo-optimizatsiya/ukraine">SEO-оптимізація</a></li>
+                        <li><a href="/seo-optimizatsiya/ukraine">SEO оптимізація</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
