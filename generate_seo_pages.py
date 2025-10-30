@@ -96,6 +96,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                     <li><a href="/#services">Послуги</a></li>
                     <li><a href="/#portfolio">Портфоліо</a></li>
                     <li><a href="/#about">Про мене</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
                     <li><a href="/#contact">Контакти</a></li>
                 </ul>
             </nav>

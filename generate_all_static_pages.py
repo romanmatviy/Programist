@@ -94,6 +94,7 @@ def generate_service_index_page(service_slug, service_name):
                     <li><a href="/#services">Послуги</a></li>
                     <li><a href="/#portfolio">Портфоліо</a></li>
                     <li><a href="/#about">Про мене</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
                     <li><a href="/#contact">Контакти</a></li>
                 </ul>
             </nav>
@@ -312,6 +313,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                     <li><a href="/#services">Послуги</a></li>
                     <li><a href="/#portfolio">Портфоліо</a></li>
                     <li><a href="/#about">Про мене</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
                     <li><a href="/#contact">Контакти</a></li>
                 </ul>
             </nav>
