@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Часті питання (FAQ) | Програміст Роман</title>
+    <meta name="description" content="Відповіді на поширені питання щодо розробки сайтів, створення інтернет-магазинів, SEO оптимізації та інших послуг.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css?ver=1">
+    
+    <style>
+        .faq-section {
+            padding: 60px 0;
+        }
+        
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .faq-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .faq-category {
+            margin-bottom: 50px;
+        }
+        
+        .faq-category h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            background: #fff;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #2c3e50;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f1f8ff;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: #3498db;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #fff;
+        }
+        
+        .faq-answer.show {
+            padding: 0 25px 20px;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            margin: 0 0 15px;
+            line-height: 1.6;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+            background: #f8f9fa;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 15px 20px;
+                font-size: 15px;
+            }
+            
+            .faq-answer {
+                padding: 0 20px;
+            }
+            
+            .faq-answer.show {
+                padding: 0 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="/" class="logo">RomanDev</a>
+            <nav>
+                <ul>
+                    <li><a href="/#services">Послуги</a></li>
+                    <li><a href="/#portfolio">Портфоліо</a></li>
+                    <li><a href="/#about">Про мене</a></li>
+                    <li><a href="/faq.html" class="active">FAQ</a></li>
+                    <li><a href="/#contact">Контакти</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-intro">
+                <h1>Поширені питання</h1>
+                <p>Тут ви знайдете відповіді на найпоширеніші питання щодо наших послуг</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- Розробка сайтів -->
+                <div class="faq-category">
+                    <h2>Розробка сайтів</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Скільки часу займає створення сайту?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Термін розробки залежить від складності проекту:</p>
+                            <ul>
+                                <li>Лендінг-сторінка - від 5 до 10 робочих днів</li>
+                                <li>Корпоративний сайт - від 2 до 6 тижнів</li>
+                                <li>Інтернет-магазин - від 4 до 12 тижнів</li>
+                                <li>Індивідуальний веб-додаток - від 8 тижнів</li>
+                            </ul>
+                            <p>Точний термін визначається після обговорення всіх вимог та складання технічного завдання.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Які технології ви використовуєте?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ми працюємо з сучасним стеком технологій:</p>
+                            <ul>
+                                <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Vue.js</li>
+                                <li><strong>Backend:</strong> PHP (Laravel, Symfony), Node.js, Python</li>
+                                <li><strong>CMS:</strong> WordPress, OpenCart, PrestaShop, Joomla</li>
+                                <li><strong>Бази даних:</strong> MySQL, PostgreSQL, MongoDB</li>
+                                <li><strong>Інші:</strong> REST API, GraphQL, Docker, Git</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Чи можна буде керувати сайтом самостійно?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Так, всі наші сайти постачаються з системою управління (адмін-панеллю), яка дозволяє:</p>
+                            <ul>
+                                <li>Додавати та редагувати сторінки</li>
+                                <li>Керувати товарами та категоріями (для інтернет-магазинів)</li>
+                                <li>Додавати новини та блогові статті</li>
+                                <li>Керувати заявками та замовленнями</li>
+                                <li>Налаштовувати SEO-параметри</li>
+                            </ul>
+                            <p>Після здачі проекту ми проводимо навчання роботі з адмін-панеллю.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Інтернет-магазини -->
+                <div class="faq-category">
+                    <h2>Інтернет-магазини</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Скільки коштує створити інтернет-магазин?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Вартість розробки інтернет-магазину залежить від багатьох факторів:</p>
+                            <ul>
+                                <li>Кількість товарів та категорій</li>
+                                <li>Необхідний функціонал (фільтри, порівняння, знижки тощо)</li>
+                                <li>Інтеграції з платіжними системами та службами доставки</li>
+                                <li>Дизайн та унікальність інтерфейсу</li>
+                            </ul>
+                            <p>Орієнтовна вартість стартує від 30 000 грн. Точну ціну ми зможемо назвати після обговорення всіх деталей вашого проекту.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Які платіжні системи ви інтегруєте?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ми інтегруємо всі популярні платіжні системи в Україні та за кордоном:</p>
+                            <ul>
+                                <li>Приват24</li>
+                                <li>LiqPay</li>
+                                <li>Fondy</li>
+                                <li>WayForPay</li>
+                                <li>Stripe</li>
+                                <li>PayPal</li>
+                                <li>Оплата при отриманні</li>
+                                <li>Розрахунок за реквізитами</li>
+                            </ul>
+                            <p>Також можлива інтеграція з будь-якою іншою платіжною системою за вашим вибором.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SEO та просування -->
+                <div class="faq-category">
+                    <h2>SEO та просування</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Скільки часу потрібно для просування сайту в ТОП?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Терміни виходу в ТОП залежать від багатьох факторів:</p>
+                            <ul>
+                                <li>Конкуренція у вашій ніші</li>
+                                <li>Якість та актуальність контенту</li>
+                                <li>Технічний стан сайту</li>
+                                <li>Якість зовнішніх посилань</li>
+                            </ul>
+                            <p>Перші результати зазвичай помітні вже через 1-3 місяці, але для стійкого результату рекомендується постійна робота з сайтом протягом 6-12 місяців.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Чи потрібно платити щомісяця за SEO?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Так, SEO - це постійний процес, який вимагає регулярної роботи:</p>
+                            <ul>
+                                <li>Аналіз позицій та конкурентів</li>
+                                <li>Оновлення та оптимізація контенту</li>
+                                <li>Робота з якісними зовнішніми посиланнями</li>
+                                <li>Моніторинг технічних аспектів сайту</li>
+                                <li>Адаптація до оновлень пошукових алгоритмів</li>
+                            </ul>
+                            <p>Щомісячна оплата покриває всі ці види робіт та забезпечує стабільне зростання позицій вашого сайту.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Співпраця та оплата -->
+                <div class="faq-category">
+                    <h2>Співпраця та оплата</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Як починається співпраця?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Наш процес співпраці включає кілька етапів:</p>
+                            <ol>
+                                <li>Консультація для визначення ваших потреб та цілей</li>
+                                <li>Аналіз конкурентів та цільової аудиторії</li>
+                                <li>Складання технічного завдання</li>
+                                <li>Узгодження вартості та термінів</li>
+                                <li>Підписання договору та початок роботи</li>
+                                <li>Створення дизайну та його затвердження</li>
+                                <li>Програмування та наповнення сайту</li>
+                                <li>Тестування та виправлення помилок</li>
+                                <li>Запуск та навчання роботі з сайтом</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Які умови оплати?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ми пропонуємо гнучкі умови оплати, які обговорюються індивідуально:</p>
+                            <ul>
+                                <li>Передоплата 30-50% від загальної вартості</li>
+                                <li>Проміжні платежі за етапами робіт</li>
+                                <li>Оплата після успішного завершення проекту</li>
+                                <li>Можливість розстрочки платежу</li>
+                            </ul>
+                            <p>Приймаємо оплату банківським переказом, через платіжні системи або криптовалютою.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Чи надаєте ви гарантії на свої роботи?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Так, ми надаємо гарантію на всі наші роботи:</p>
+                            <ul>
+                                <li>Гарантія на програмний код - 12 місяців</li>
+                                <li>Безкоштовне навчання роботі з сайтом</li>
+                                <li>Технічна підтримка після запуску</li>
+                                <li>Консультації з розвитку проекту</li>
+                            </ul>
+                            <p>Всі наші зобов'язання фіксуються в договорі.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h3>Не знайшли відповіді на своє питання?</h3>
+                <p>Зв'яжіться з нами, і ми з радістю відповімо на всі ваші запитання</p>
+                <a href="/#contact" class="btn">Зв'язатися з нами</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Послуги</h3>
+                    <ul>
+                        <li><a href="/rozrobka-saitiv/ukraine/">Розробка сайтів</a></li>
+                        <li><a href="/internet-magazin/ukraine/">Інтернет-магазини</a></li>
+                        <li><a href="/wordpress/ukraine/">WordPress розробка</a></li>
+                        <li><a href="/laravel/ukraine/">Laravel розробка</a></li>
+                        <li><a href="/crm-erp/ukraine/">CRM/ERP системи</a></li>
+                        <li><a href="/seo-optimizatsiya/ukraine/">SEO оптимізація</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Міста</h3>
+                    <ul>
+                        <li><a href="/rozrobka-saitiv/ukraine/kyiv/">Київ</a></li>
+                        <li><a href="/rozrobka-saitiv/ukraine/lviv/">Львів</a></li>
+                        <li><a href="/rozrobka-saitiv/ukraine/kharkiv/">Харків</a></li>
+                        <li><a href="/rozrobka-saitiv/ukraine/odesa/">Одеса</a></li>
+                        <li><a href="/rozrobka-saitiv/ukraine/dnipro/">Дніпро</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Контакти</h3>
+                    <ul>
+                        <li>Телефон: <a href="tel:+380938800822">+38 (093) 88-00-822</a></li>
+                        <li>Email: <a href="mailto:info@matviy.pp.ua">info@matviy.pp.ua</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Програміст Роман. Всі права захищені.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js?ver=2"></script>
+    <script>
+        // FAQ accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isOpen = this.classList.contains('active');
+                    
+                    // Close all answers
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('show');
+                    });
+                    
+                    // Toggle current answer if it was closed
+                    if (!isOpen) {
+                        this.classList.add('active');
+                        answer.classList.add('show');
+                    }
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('nav');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
