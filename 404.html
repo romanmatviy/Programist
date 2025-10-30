@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сторінку не знайдено (404) | Програміст Роман</title>
+    <meta name="description" content="Сторінку не знайдено. Поверніться на головну або скористайтеся пошуком.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css?ver=1">
+    
+    <style>
+        .error-404 {
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .error-404 h1 {
+            font-size: 120px;
+            margin: 0;
+            line-height: 1;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .error-404 h2 {
+            font-size: 32px;
+            margin: 20px 0 15px;
+            color: #2c3e50;
+        }
+        
+        .error-404 p {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .btn-home {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn-home:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .search-box {
+            max-width: 500px;
+            width: 100%;
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .search-button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 7px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .error-404 h1 {
+                font-size: 80px;
+            }
+            
+            .error-404 h2 {
+                font-size: 24px;
+            }
+            
+            .error-404 p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="/" class="logo">RomanDev</a>
+            <nav>
+                <ul>
+                    <li><a href="#services">Послуги</a></li>
+                    <li><a href="#portfolio">Портфоліо</a></li>
+                    <li><a href="#about">Про мене</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 404 Content -->
+    <main>
+        <section class="error-404">
+            <h1>404</h1>
+            <h2>Ой! Сторінку не знайдено</h2>
+            <p>Сторінка, яку ви шукаєте, могла бути видалена, переміщена або тимчасово недоступна.</p>
+            
+            <div class="search-box">
+                <form action="/search" method="get" role="search">
+                    <input type="search" class="search-input" placeholder="Знайти на сайті..." name="q">
+                    <button type="submit" class="search-button">Пошук</button>
+                </form>
+            </div>
+            
+            <a href="/" class="btn-home">Повернутися на головну</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <p>Email: info@matviy.pp.ua</p>
+                    <p>Телефон: +38 (093) 880-08-22</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Соціальні мережі</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/romanmatviy/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/romanmatviy" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Програміст Роман. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple search functionality
+        document.querySelector('form[role="search"]').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = this.querySelector('input[name="q"]').value.trim();
+            if (query) {
+                window.location.href = `https://www.google.com/search?q=site:programist.matviy.pp.ua ${encodeURIComponent(query)}`;
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
