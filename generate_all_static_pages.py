@@ -161,6 +161,8 @@ def generate_service_index_page(service_slug, service_name):
                     <li><strong>PrestaShop</strong> – спеціалізована платформа для створення інтернет-магазинів</li>
                     <li><strong>OpenCart</strong> – гнучка система для електронної комерції</li>
                     <li><strong>Vue.js</strong> – прогресивний JavaScript-фреймворк для створення інтерактивних інтерфейсів</li>
+                    <li><strong>Next.js</strong> – потужний React-фреймворк для швидких та SEO-оптимізованих сайтів</li>
+                    <li><strong>Node.js</strong> – високопродуктивна платформа для серверних рішень та API</li>
                 </ul>
                 
                 <h2>Переваги замовлення послуг у мене</h2>
@@ -292,6 +294,8 @@ def generate_service_index_page(service_slug, service_name):
                         <li><a href="/laravel/ukraine/">Laravel розробка</a></li>
                         <li><a href="/crm-erp/ukraine/">CRM/ERP системи</a></li>
                         <li><a href="/seo-optimizatsiya/ukraine/">SEO оптимізація</a></li>
+                        <li><a href="/nextjs/ukraine/">Next.js розробка</a></li>
+                        <li><a href="/nodejs/ukraine/">Node.js розробка</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -466,6 +470,8 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                     <li><strong>PrestaShop</strong> – спеціалізована платформа для створення інтернет-магазинів</li>
                     <li><strong>OpenCart</strong> – гнучка система для електронної комерції</li>
                     <li><strong>Vue.js</strong> – прогресивний JavaScript-фреймворк для створення інтерактивних інтерфейсів</li>
+                    <li><strong>Next.js</strong> – потужний React-фреймворк для швидких та SEO-оптимізованих сайтів</li>
+                    <li><strong>Node.js</strong> – високопродуктивна платформа для серверних рішень та API</li>
                 </ul>
                 
                 <h2>Переваги замовлення послуг в {{ geo_name }}</h2>
@@ -596,6 +602,8 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                         <li><a href="/laravel/ukraine/">Laravel розробка</a></li>
                         <li><a href="/crm-erp/ukraine/">CRM/ERP системи</a></li>
                         <li><a href="/seo-optimizatsiya/ukraine/">SEO оптимізація</a></li>
+                        <li><a href="/nextjs/ukraine/">Next.js розробка</a></li>
+                        <li><a href="/nodejs/ukraine/">Node.js розробка</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
