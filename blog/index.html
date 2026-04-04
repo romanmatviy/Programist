@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог про веб-розробку та SEO | Програміст Роман</title>
-    <meta name="description" content="Корисні статті про веб-розробку, створення сайтів, SEO оптимізацію та сучасні технології. Поради від професійного розробника.">
-    
+    <meta name="description"
+        content="Корисні статті про веб-розробку, створення сайтів, SEO оптимізацію та сучасні технології. Поради від професійного розробника.">
+
     <!-- Favicon -->
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    
+    <link rel="icon" href="https://programist.matviy.pp.ua/img/favicon.ico" type="image/x-icon">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="/css/style.css?ver=1">
-    
+
     <style>
         .blog-header {
             background: linear-gradient(135deg, #3498db, #2c3e50);
@@ -25,25 +29,25 @@
             text-align: center;
             margin-bottom: 50px;
         }
-        
+
         .blog-header h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
-        
+
         .blog-header p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
         }
-        
+
         .blog-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         .blog-categories {
             display: flex;
             flex-wrap: wrap;
@@ -51,7 +55,7 @@
             margin-bottom: 40px;
             justify-content: center;
         }
-        
+
         .category-tag {
             background: #f0f0f0;
             padding: 8px 16px;
@@ -61,52 +65,53 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
-        .category-tag:hover, .category-tag.active {
+
+        .category-tag:hover,
+        .category-tag.active {
             background: #3498db;
             color: white;
         }
-        
+
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
         }
-        
+
         .blog-card {
             background: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .blog-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
-        
+
         .blog-image {
             height: 200px;
             overflow: hidden;
         }
-        
+
         .blog-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
+
         .blog-card:hover .blog-image img {
             transform: scale(1.05);
         }
-        
+
         .blog-content {
             padding: 20px;
         }
-        
+
         .blog-meta {
             display: flex;
             align-items: center;
@@ -114,11 +119,11 @@
             font-size: 0.85rem;
             color: #666;
         }
-        
+
         .blog-date {
             margin-right: 15px;
         }
-        
+
         .blog-category {
             background: #e9f5ff;
             color: #3498db;
@@ -127,29 +132,29 @@
             font-size: 0.75rem;
             font-weight: 500;
         }
-        
+
         .blog-title {
             font-size: 1.4rem;
             margin: 10px 0 15px;
             line-height: 1.4;
         }
-        
+
         .blog-title a {
             color: #2c3e50;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .blog-title a:hover {
             color: #3498db;
         }
-        
+
         .blog-excerpt {
             color: #555;
             line-height: 1.6;
             margin-bottom: 15px;
         }
-        
+
         .read-more {
             color: #3498db;
             text-decoration: none;
@@ -158,29 +163,29 @@
             align-items: center;
             transition: all 0.3s ease;
         }
-        
+
         .read-more:hover {
             color: #217dbb;
             transform: translateX(5px);
         }
-        
+
         .read-more::after {
             content: '→';
             margin-left: 5px;
             transition: transform 0.3s ease;
         }
-        
+
         .read-more:hover::after {
             transform: translateX(5px);
         }
-        
+
         .pagination {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin: 50px 0;
         }
-        
+
         .page-link {
             display: flex;
             align-items: center;
@@ -193,12 +198,13 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
-        .page-link:hover, .page-link.active {
+
+        .page-link:hover,
+        .page-link.active {
             background: #3498db;
             color: white;
         }
-        
+
         .newsletter {
             background: #f8f9fa;
             padding: 50px 20px;
@@ -206,25 +212,25 @@
             border-radius: 8px;
             margin: 50px 0;
         }
-        
+
         .newsletter h3 {
             margin-bottom: 20px;
             color: #2c3e50;
         }
-        
+
         .newsletter p {
             max-width: 600px;
             margin: 0 auto 25px;
             color: #555;
         }
-        
+
         .newsletter-form {
             max-width: 500px;
             margin: 0 auto;
             display: flex;
             gap: 10px;
         }
-        
+
         .newsletter-input {
             flex: 1;
             padding: 12px 15px;
@@ -232,7 +238,7 @@
             border-radius: 4px;
             font-size: 1rem;
         }
-        
+
         .newsletter-button {
             background: #3498db;
             color: white;
@@ -243,26 +249,27 @@
             font-weight: 500;
             transition: background 0.3s ease;
         }
-        
+
         .newsletter-button:hover {
             background: #2980b9;
         }
-        
+
         @media (max-width: 768px) {
             .blog-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .newsletter-form {
                 flex-direction: column;
             }
-            
+
             .newsletter-button {
                 padding: 12px 15px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -290,7 +297,8 @@
     <section class="blog-header">
         <div class="container">
             <h1>Блог про веб-розробку та SEO</h1>
-            <p>Дізнавайтеся про останні тренди, корисні поради та цікаві кейси зі світу веб-розробки, дизайну та просування сайтів</p>
+            <p>Дізнавайтеся про останні тренди, корисні поради та цікаві кейси зі світу веб-розробки, дизайну та
+                просування сайтів</p>
         </div>
     </section>
 
@@ -322,7 +330,8 @@
                     <h2 class="blog-title">
                         <a href="/blog/seo-trendy-2025">ТОП-10 SEO трендів 2025 року, які варто врахувати</a>
                     </h2>
-                    <p class="blog-excerpt">Огляд основних трендів пошукової оптимізації, які домінуватимуть у 2025 році. Як підготувати свій сайт до нових вимог пошукових систем.</p>
+                    <p class="blog-excerpt">Огляд основних трендів пошукової оптимізації, які домінуватимуть у 2025
+                        році. Як підготувати свій сайт до нових вимог пошукових систем.</p>
                     <a href="/blog/seo-trendy-2025" class="read-more">Читати далі</a>
                 </div>
             </article>
@@ -338,9 +347,11 @@
                         <span class="blog-category">WordPress</span>
                     </div>
                     <h2 class="blog-title">
-                        <a href="/blog/pryskorennya-wordpress">Як прискорити завантаження WordPress сайту: повний гайд</a>
+                        <a href="/blog/pryskorennya-wordpress">Як прискорити завантаження WordPress сайту: повний
+                            гайд</a>
                     </h2>
-                    <p class="blog-excerpt">Детальний посібник з оптимізації швидкодії WordPress. Плагіни, налаштування сервера та інші ефективні методи прискорення.</p>
+                    <p class="blog-excerpt">Детальний посібник з оптимізації швидкодії WordPress. Плагіни, налаштування
+                        сервера та інші ефективні методи прискорення.</p>
                     <a href="/blog/pryskorennya-wordpress" class="read-more">Читати далі</a>
                 </div>
             </article>
@@ -358,7 +369,8 @@
                     <h2 class="blog-title">
                         <a href="/blog/laravel-11-onovlennia">Огляд нових можливостей Laravel 11</a>
                     </h2>
-                    <p class="blog-excerpt">Що нового в Laravel 11? Розбираємо основні оновлення, зміни в архітектурі та як вони вплинуть на розробку додатків.</p>
+                    <p class="blog-excerpt">Що нового в Laravel 11? Розбираємо основні оновлення, зміни в архітектурі та
+                        як вони вплинуть на розробку додатків.</p>
                     <a href="/blog/laravel-11-onovlennia" class="read-more">Читати далі</a>
                 </div>
             </article>
@@ -374,9 +386,11 @@
                         <span class="blog-category">Дизайн</span>
                     </div>
                     <h2 class="blog-title">
-                        <a href="/blog/mobile-first-pidkhid">Mobile First: чому це важливо та як правильно реалізувати</a>
+                        <a href="/blog/mobile-first-pidkhid">Mobile First: чому це важливо та як правильно
+                            реалізувати</a>
                     </h2>
-                    <p class="blog-excerpt">Детальний посібник з підходу Mobile First у веб-розробці. Принципи, переваги та практичні приклади реалізації.</p>
+                    <p class="blog-excerpt">Детальний посібник з підходу Mobile First у веб-розробці. Принципи, переваги
+                        та практичні приклади реалізації.</p>
                     <a href="/blog/mobile-first-pidkhid" class="read-more">Читати далі</a>
                 </div>
             </article>
@@ -394,7 +408,8 @@
                     <h2 class="blog-title">
                         <a href="/blog/seo-internet-magazynu">Повний гайд з SEO для інтернет-магазину: від А до Я</a>
                     </h2>
-                    <p class="blog-excerpt">Ефективні стратегії просування інтернет-магазинів. Технічні аспекти, робота з контентом та зовнішніми посиланнями.</p>
+                    <p class="blog-excerpt">Ефективні стратегії просування інтернет-магазинів. Технічні аспекти, робота
+                        з контентом та зовнішніми посиланнями.</p>
                     <a href="/blog/seo-internet-magazynu" class="read-more">Читати далі</a>
                 </div>
             </article>
@@ -412,7 +427,8 @@
                     <h2 class="blog-title">
                         <a href="/blog/bezpeka-saitu">Як захистити свій сайт: повний гайд з кібербезпеки</a>
                     </h2>
-                    <p class="blog-excerpt">Основні загрози для веб-сайтів та ефективні методи захисту. Як уникнути хакерських атак та витоків даних.</p>
+                    <p class="blog-excerpt">Основні загрози для веб-сайтів та ефективні методи захисту. Як уникнути
+                        хакерських атак та витоків даних.</p>
                     <a href="/blog/bezpeka-saitu" class="read-more">Читати далі</a>
                 </div>
             </article>
@@ -482,13 +498,13 @@
         // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const nav = document.querySelector('nav');
-        
+
         if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.addEventListener('click', function () {
                 this.classList.toggle('active');
                 nav.classList.toggle('active');
             });
-            
+
             // Close mobile menu when clicking on a link
             document.querySelectorAll('nav a').forEach(link => {
                 link.addEventListener('click', () => {
@@ -497,7 +513,7 @@
                 });
             });
         }
-        
+
         // Category filter
         const categoryTags = document.querySelectorAll('.category-tag');
         categoryTags.forEach(tag => {
@@ -510,4 +526,5 @@
         });
     </script>
 </body>
+
 </html>

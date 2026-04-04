@@ -69,7 +69,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <link rel="canonical" href="https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/{{ city_slug }}/">
     
     <!-- Favicon -->
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://programist.matviy.pp.ua/img/favicon.ico" type="image/x-icon">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -238,6 +238,8 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                     <ul>
                         <li>Телефон: <a href="tel:+380938800822">+38 (093) 88-00-822</a></li>
                         <li>Email: <a href="mailto:info@matviy.pp.ua">info@matviy.pp.ua</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/romanmatviy/" target="_blank">romanmatviy</a></li>
+                        <li>GitHub: <a href="https://github.com/romanmatviy" target="_blank">romanmatviy</a></li>
                     </ul>
                 </div>
             </div>
@@ -443,11 +445,19 @@ def generate_related_services(service_slug, geo_slug, city_slug):
     for related in related_services:
         service_name = services[related]
         service_name_in_city = f"{service_name} {cities[city_slug]['in']}"
-        img_src = f"/img/service-{related}.jpg"
+        
+        # Mapping to existing images
+        image_mapping = {
+            "rozrobka-saitiv": "/img/service-rozrobka-saitiv.png",
+            "internet-magazin": "/img/service-internet-magazin.png",
+            "wordpress": "/img/service-support-wordpress.png",
+            "prestashop": "/img/service-prestashop.png",
+        }
+        img_src = image_mapping.get(related, "/img/service-rozrobka-saitiv.png")
         
         related_html += f"""
 <div class="service-card">
-    <img src="{img_src}" alt="{service_name_in_city}">
+    <img src="{img_src}" alt="{service_name_in_city}" loading="lazy">
     <div class="service-content">
         <h3>{service_name_in_city}</h3>
         <p>{service_descriptions[related]}</p>

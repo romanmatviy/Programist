@@ -67,7 +67,7 @@ def generate_service_index_page(service_slug, service_name):
     <link rel="canonical" href="https://programist.matviy.pp.ua/{{ service_slug }}/">
     
     <!-- Favicon -->
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://programist.matviy.pp.ua/img/favicon.ico" type="image/x-icon">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -232,6 +232,8 @@ def generate_service_index_page(service_slug, service_name):
                     <ul>
                         <li>Телефон: <a href="tel:+380938800822">+38 (093) 88-00-822</a></li>
                         <li>Email: <a href="mailto:info@matviy.pp.ua">info@matviy.pp.ua</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/romanmatviy/" target="_blank">romanmatviy</a></li>
+                        <li>GitHub: <a href="https://github.com/romanmatviy" target="_blank">romanmatviy</a></li>
                     </ul>
                 </div>
             </div>
@@ -286,7 +288,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
     <link rel="canonical" href="https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/">
     
     <!-- Favicon -->
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://programist.matviy.pp.ua/img/favicon.ico" type="image/x-icon">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -452,6 +454,8 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                     <ul>
                         <li>Телефон: <a href="tel:+380938800822">+38 (093) 88-00-822</a></li>
                         <li>Email: <a href="mailto:info@matviy.pp.ua">info@matviy.pp.ua</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/romanmatviy/" target="_blank">romanmatviy</a></li>
+                        <li>GitHub: <a href="https://github.com/romanmatviy" target="_blank">romanmatviy</a></li>
                     </ul>
                 </div>
             </div>

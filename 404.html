@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сторінку не знайдено (404) | Програміст Роман</title>
     <meta name="description" content="Сторінку не знайдено. Поверніться на головну або скористайтеся пошуком.">
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    
+    <link rel="icon" href="https://programist.matviy.pp.ua/img/favicon.ico" type="image/x-icon">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="/css/style.css?ver=1">
-    
+
     <style>
         .error-404 {
             text-align: center;
@@ -27,7 +30,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .error-404 h1 {
             font-size: 120px;
             margin: 0;
@@ -35,20 +38,20 @@
             color: #2c3e50;
             font-weight: 700;
         }
-        
+
         .error-404 h2 {
             font-size: 32px;
             margin: 20px 0 15px;
             color: #2c3e50;
         }
-        
+
         .error-404 p {
             font-size: 18px;
             color: #7f8c8d;
             margin-bottom: 30px;
             max-width: 600px;
         }
-        
+
         .btn-home {
             display: inline-block;
             background: #3498db;
@@ -62,28 +65,28 @@
             cursor: pointer;
             font-size: 16px;
         }
-        
+
         .btn-home:hover {
             background: #2980b9;
             transform: translateY(-2px);
         }
-        
+
         .search-box {
             max-width: 500px;
             width: 100%;
             margin: 30px auto;
             position: relative;
         }
-        
+
         .search-input {
             width: 100%;
             padding: 12px 20px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .search-button {
             position: absolute;
             right: 5px;
@@ -95,22 +98,23 @@
             border-radius: 3px;
             cursor: pointer;
         }
-        
+
         @media (max-width: 768px) {
             .error-404 h1 {
                 font-size: 80px;
             }
-            
+
             .error-404 h2 {
                 font-size: 24px;
             }
-            
+
             .error-404 p {
                 font-size: 16px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -139,30 +143,37 @@
             <h1>404</h1>
             <h2>Ой! Сторінку не знайдено</h2>
             <p>Сторінка, яку ви шукаєте, могла бути видалена, переміщена або тимчасово недоступна.</p>
-            
+
             <div class="search-box">
                 <form action="/search" method="get" role="search">
                     <input type="search" class="search-input" placeholder="Знайти на сайті..." name="q">
                     <button type="submit" class="search-button">Пошук</button>
                 </form>
             </div>
-            
+
             <a href="/" class="btn-home">Повернутися на головну</a>
-            
+
             <div class="suggested-services" style="margin-top: 60px; width: 100%; max-width: 1200px;">
                 <h3 style="margin-bottom: 20px; color: #2c3e50;">Можливо вас зацікавить:</h3>
-                
-                <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; width: 100%;">
+
+                <div class="services-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; width: 100%;">
                     <!-- Україна -->
                     <div class="city-services" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
                         <h4 style="color: #3498db; margin-top: 0;">Україна</h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/" style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Україні</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/" style="color: #2c3e50; text-decoration: none;">Інтернет-магазини у Україні</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/" style="color: #2c3e50; text-decoration: none;">WordPress у Україні</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/" style="color: #2c3e50; text-decoration: none;">Laravel у Україні</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/" style="color: #2c3e50; text-decoration: none;">CRM/ERP у Україні</a></li>
-                            <li><a href="/seo-optimizatsiya/ukraine/" style="color: #2c3e50; text-decoration: none;">SEO оптимізація у Україні</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/"
+                                    style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Україні</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/"
+                                    style="color: #2c3e50; text-decoration: none;">Інтернет-магазини у Україні</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/"
+                                    style="color: #2c3e50; text-decoration: none;">WordPress у Україні</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/"
+                                    style="color: #2c3e50; text-decoration: none;">Laravel у Україні</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/"
+                                    style="color: #2c3e50; text-decoration: none;">CRM/ERP у Україні</a></li>
+                            <li><a href="/seo-optimizatsiya/ukraine/" style="color: #2c3e50; text-decoration: none;">SEO
+                                    оптимізація у Україні</a></li>
                         </ul>
                     </div>
 
@@ -170,67 +181,97 @@
                     <div class="city-services" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
                         <h4 style="color: #3498db; margin-top: 0;">Київ</h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/kyiv/" style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Києві</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/kyiv/" style="color: #2c3e50; text-decoration: none;">Інтернет-магазини у Києві</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/kyiv/" style="color: #2c3e50; text-decoration: none;">WordPress у Києві</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/kyiv/" style="color: #2c3e50; text-decoration: none;">Laravel у Києві</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/kyiv/" style="color: #2c3e50; text-decoration: none;">CRM/ERP у Києві</a></li>
-                            <li><a href="/seo-optimizatsiya/ukraine/kyiv/" style="color: #2c3e50; text-decoration: none;">SEO оптимізація у Києві</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/kyiv/"
+                                    style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Києві</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/kyiv/"
+                                    style="color: #2c3e50; text-decoration: none;">Інтернет-магазини у Києві</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/kyiv/"
+                                    style="color: #2c3e50; text-decoration: none;">WordPress у Києві</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/kyiv/"
+                                    style="color: #2c3e50; text-decoration: none;">Laravel у Києві</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/kyiv/"
+                                    style="color: #2c3e50; text-decoration: none;">CRM/ERP у Києві</a></li>
+                            <li><a href="/seo-optimizatsiya/ukraine/kyiv/"
+                                    style="color: #2c3e50; text-decoration: none;">SEO оптимізація у Києві</a></li>
                         </ul>
                     </div>
-                    
+
                     <!-- Львів -->
                     <div class="city-services" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
                         <h4 style="color: #3498db; margin-top: 0;">Львів</h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/lviv/" style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Львові</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/lviv/" style="color: #2c3e50; text-decoration: none;">Інтернет-магазини у Львові</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/lviv/" style="color: #2c3e50; text-decoration: none;">WordPress у Львові</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/lviv/" style="color: #2c3e50; text-decoration: none;">Laravel у Львові</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/lviv/" style="color: #2c3e50; text-decoration: none;">CRM/ERP у Львові</a></li>
-                            <li><a href="/seo-optimizatsiya/ukraine/lviv/" style="color: #2c3e50; text-decoration: none;">SEO оптимізація у Львові</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/lviv/"
+                                    style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Львові</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/lviv/"
+                                    style="color: #2c3e50; text-decoration: none;">Інтернет-магазини у Львові</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/lviv/"
+                                    style="color: #2c3e50; text-decoration: none;">WordPress у Львові</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/lviv/"
+                                    style="color: #2c3e50; text-decoration: none;">Laravel у Львові</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/lviv/"
+                                    style="color: #2c3e50; text-decoration: none;">CRM/ERP у Львові</a></li>
+                            <li><a href="/seo-optimizatsiya/ukraine/lviv/"
+                                    style="color: #2c3e50; text-decoration: none;">SEO оптимізація у Львові</a></li>
                         </ul>
                     </div>
-                    
+
                     <!-- Харків -->
                     <div class="city-services" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
                         <h4 style="color: #3498db; margin-top: 0;">Харків</h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/kharkiv/" style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Харкові</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/kharkiv/" style="color: #2c3e50; text-decoration: none;">Інтернет-магазини у Харкові</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/kharkiv/" style="color: #2c3e50; text-decoration: none;">WordPress у Харкові</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/kharkiv/" style="color: #2c3e50; text-decoration: none;">Laravel у Харкові</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/kharkiv/" style="color: #2c3e50; text-decoration: none;">CRM/ERP у Харкові</a></li>
-                            <li><a href="/seo-optimizatsiya/ukraine/kharkiv/" style="color: #2c3e50; text-decoration: none;">SEO оптимізація у Харкові</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/kharkiv/"
+                                    style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Харкові</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/kharkiv/"
+                                    style="color: #2c3e50; text-decoration: none;">Інтернет-магазини у Харкові</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/kharkiv/"
+                                    style="color: #2c3e50; text-decoration: none;">WordPress у Харкові</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/kharkiv/"
+                                    style="color: #2c3e50; text-decoration: none;">Laravel у Харкові</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/kharkiv/"
+                                    style="color: #2c3e50; text-decoration: none;">CRM/ERP у Харкові</a></li>
+                            <li><a href="/seo-optimizatsiya/ukraine/kharkiv/"
+                                    style="color: #2c3e50; text-decoration: none;">SEO оптимізація у Харкові</a></li>
                         </ul>
                     </div>
-                    
+
                     <!-- Одеса -->
                     <div class="city-services" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
                         <h4 style="color: #3498db; margin-top: 0;">Одеса</h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/odesa/" style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Одесі</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/odesa/" style="color: #2c3e50; text-decoration: none;">Інтернет-магазини в Одесі</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/odesa/" style="color: #2c3e50; text-decoration: none;">WordPress в Одесі</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/odesa/" style="color: #2c3e50; text-decoration: none;">Laravel в Одесі</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/odesa/" style="color: #2c3e50; text-decoration: none;">CRM/ERP в Одесі</a></li>
-                            <li><a href="/seo-optimizatsiya/ukraine/odesa/" style="color: #2c3e50; text-decoration: none;">SEO оптимізація в Одесі</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/odesa/"
+                                    style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Одесі</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/odesa/"
+                                    style="color: #2c3e50; text-decoration: none;">Інтернет-магазини в Одесі</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/odesa/"
+                                    style="color: #2c3e50; text-decoration: none;">WordPress в Одесі</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/odesa/"
+                                    style="color: #2c3e50; text-decoration: none;">Laravel в Одесі</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/odesa/"
+                                    style="color: #2c3e50; text-decoration: none;">CRM/ERP в Одесі</a></li>
+                            <li><a href="/seo-optimizatsiya/ukraine/odesa/"
+                                    style="color: #2c3e50; text-decoration: none;">SEO оптимізація в Одесі</a></li>
                         </ul>
                     </div>
-                    
+
                     <!-- Дніпро -->
                     <div class="city-services" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
                         <h4 style="color: #3498db; margin-top: 0;">Дніпро</h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/dnipro/" style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Дніпрі</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/dnipro/" style="color: #2c3e50; text-decoration: none;">Інтернет-магазини у Дніпрі</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/dnipro/" style="color: #2c3e50; text-decoration: none;">WordPress у Дніпрі</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/dnipro/" style="color: #2c3e50; text-decoration: none;">Laravel у Дніпрі</a></li>
-                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/dnipro/" style="color: #2c3e50; text-decoration: none;">CRM/ERP у Дніпрі</a></li>
-                            <li><a href="/seo-optimizatsiya/ukraine/dnipro/" style="color: #2c3e50; text-decoration: none;">SEO оптимізація у Дніпрі</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/rozrobka-saitiv/ukraine/dnipro/"
+                                    style="color: #2c3e50; text-decoration: none;">Розробка сайтів у Дніпрі</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/internet-magazin/ukraine/dnipro/"
+                                    style="color: #2c3e50; text-decoration: none;">Інтернет-магазини у Дніпрі</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/wordpress/ukraine/dnipro/"
+                                    style="color: #2c3e50; text-decoration: none;">WordPress у Дніпрі</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/laravel/ukraine/dnipro/"
+                                    style="color: #2c3e50; text-decoration: none;">Laravel у Дніпрі</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/crm-erp/ukraine/dnipro/"
+                                    style="color: #2c3e50; text-decoration: none;">CRM/ERP у Дніпрі</a></li>
+                            <li><a href="/seo-optimizatsiya/ukraine/dnipro/"
+                                    style="color: #2c3e50; text-decoration: none;">SEO оптимізація у Дніпрі</a></li>
                         </ul>
                     </div>
-                    
+
                     <!-- Загальні послуги -->
                     <!-- <div class="all-services" style="background: #f8f9fa; padding: 20px; border-radius: 8px; grid-column: 1 / -1;">
                         <h4 style="color: #3498db; margin-top: 0;">Усі послуги</h4>
@@ -346,24 +387,25 @@
 
     <script>
         // Simple search functionality
-        document.querySelector('form[role="search"]').addEventListener('submit', function(e) {
+        document.querySelector('form[role="search"]').addEventListener('submit', function (e) {
             e.preventDefault();
             const query = this.querySelector('input[name="q"]').value.trim();
             if (query) {
                 window.location.href = `https://www.google.com/search?q=site:programist.matviy.pp.ua ${encodeURIComponent(query)}`;
             }
         });
-        
+
         // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const nav = document.querySelector('nav');
-        
+
         if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.addEventListener('click', function () {
                 this.classList.toggle('active');
                 nav.classList.toggle('active');
             });
         }
     </script>
 </body>
+
 </html>
