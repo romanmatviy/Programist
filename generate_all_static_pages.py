@@ -423,6 +423,39 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
             </div>
         </section>
         
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Відгуки клієнтів</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">Роман розробив для нас інтернет-магазин на PrestaShop. Все було зроблено професійно та в термін. Особливо вражений увагою до SEO-деталей та швидкістю роботи сайту.</p>
+                        <div class="testimonial-author">
+                            <span class="author-name">Олександр Ковальчук</span>
+                            <span class="author-role">Власник магазину TechShop</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">Працюємо з Романом над підтримкою нашого корпоративного сайту на Laravel. Дуже задоволені оперативністю та якістю коду. Рекомендую як надійного розробника.</p>
+                        <div class="testimonial-author">
+                            <span class="author-name">Марина Мельник</span>
+                            <span class="author-role">Маркетинг-директор AgroGroup</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">Замовляли SEO-оптимізацію та редизайн сайту на WordPress. Позиції в Google значно виросли вже за перший місяць після запуску нової версії. Дякуємо за роботу!</p>
+                        <div class="testimonial-author">
+                            <span class="author-name">Сергій Притула</span>
+                            <span class="author-role">Співзасновник Creative Agency</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Other Projects Section -->
         <section class="other-projects">
             <div class="container">
