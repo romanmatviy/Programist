@@ -658,7 +658,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
     # Додаємо список міст
     cities_list_html = ""
     for city_slug, city_data in cities.items():
-        cities_list_html += f'<li><a href="/{service_slug}/{geo_slug}/{city_slug}/">{city_data["name"]}</a></li>\n'
+        cities_list_html += f'<li><a href="/{service_slug}/{geo_slug}/{city_slug}/">{service_name} {city_data["in"]}</a></li>\n'
     page_content = page_content.replace("{{ cities_list }}", cities_list_html)
     
     # Додаємо специфічний контент для сервісу
