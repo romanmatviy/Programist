@@ -306,6 +306,9 @@ def generate_service_index_page(service_slug, service_name):
                         <li><a href="/{{ service_slug }}/ukraine/kharkiv/">Харків</a></li>
                         <li><a href="/{{ service_slug }}/ukraine/odesa/">Одеса</a></li>
                         <li><a href="/{{ service_slug }}/ukraine/dnipro/">Дніпро</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/zaporizhzhia/">Запоріжжя</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/vinnytsia/">Вінниця</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/kryvyi-rih/">Кривий Ріг</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -614,6 +617,9 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                         <li><a href="/{{ service_slug }}/ukraine/kharkiv/">Харків</a></li>
                         <li><a href="/{{ service_slug }}/ukraine/odesa/">Одеса</a></li>
                         <li><a href="/{{ service_slug }}/ukraine/dnipro/">Дніпро</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/zaporizhzhia/">Запоріжжя</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/vinnytsia/">Вінниця</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/kryvyi-rih/">Кривий Ріг</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

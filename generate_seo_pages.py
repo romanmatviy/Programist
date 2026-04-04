@@ -326,6 +326,9 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                         <li><a href="/{{ service_slug }}/{{ geo_slug }}/kharkiv/">Харків</a></li>
                         <li><a href="/{{ service_slug }}/{{ geo_slug }}/odesa/">Одеса</a></li>
                         <li><a href="/{{ service_slug }}/{{ geo_slug }}/dnipro/">Дніпро</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/zaporizhzhia/">Запоріжжя</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/vinnytsia/">Вінниця</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kryvyi-rih/">Кривий Ріг</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
