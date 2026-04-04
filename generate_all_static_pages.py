@@ -132,6 +132,19 @@ def generate_service_index_page(service_slug, service_name):
                      data-description="Професійні послуги: {{ service_name_lower }}. {{ service_description }}">
                 </div>
                 
+                ="LocalBusiness" 
+                     data-name="Програміст Роман" 
+                     data-description="Професійні послуги: {{ service_name_lower }}" 
+                     data-city="Україна" 
+                     data-region="Україна">
+                </div>
+                
+                <div data-schema="Service" 
+                     data-service-type="{{ service_name }}" 
+                     data-city="Україна" 
+                     data-description="Професійні послуги: {{ service_name_lower }}. {{ service_description }}">
+                </div>
+                
                 <p>Потрібні професійні послуги: {{ service_name_lower }}? Програміст Роман пропонує повний спектр послуг для вашого бізнесу. {{ service_content }} Замовляючи {{ service_name_lower_acc }}, ви отримуєте ефективне рішення, яке приносить результат.</p>
                 
                 <h2>Послуги: {{ service_name_lower }}</h2>
@@ -342,6 +355,19 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                 <h1>{{ service_name }} в {{ geo_name }} – професійно під ключ</h1>
                 
                 <div data-schema="LocalBusiness" 
+                     data-name="Програміст Роман" 
+                     data-description="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}" 
+                     data-city="{{ geo_name }}" 
+                     data-region="{{ geo_name }}">
+                </div>
+                
+                <div data-schema="Service" 
+                     data-service-type="{{ service_name }}" 
+                     data-city="{{ geo_name }}" 
+                     data-description="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}. {{ service_description }}">
+                </div>
+                
+                ="LocalBusiness" 
                      data-name="Програміст Роман" 
                      data-description="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}" 
                      data-city="{{ geo_name }}" 
