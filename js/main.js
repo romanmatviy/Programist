@@ -10,12 +10,29 @@ document.addEventListener('DOMContentLoaded', function() {
       navMenu.classList.toggle('active');
       mobileMenuToggle.classList.toggle('active');
     });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      });
+    });
   }
   
   // Smooth scrolling and contact modal fallback
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href*="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
+      const href = this.getAttribute('href');
+      
+      // If it's a link to another page (but with an anchor), let the browser handle it
+      // UNLESS we are already on that page.
+      const isSamePage = href.startsWith('#') || 
+                       (href.startsWith('/') && href.includes('#') && window.location.pathname === '/');
+      
+      if (!isSamePage) return;
+
+      const targetId = href.substring(href.indexOf('#'));
       if (targetId === '#') {
         e.preventDefault();
         return;

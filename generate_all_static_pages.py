@@ -98,7 +98,7 @@ def generate_service_index_page(service_slug, service_name):
                     <li><a href="/#contact">Контакти</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle">
+            <button class="mobile-menu-toggle" aria-label="Меню">
                 <span></span>
                 <span></span>
                 <span></span>

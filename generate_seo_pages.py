@@ -100,7 +100,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                     <li><a href="/#contact">Контакти</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle">
+            <button class="mobile-menu-toggle" aria-label="Меню">
                 <span></span>
                 <span></span>
                 <span></span>
