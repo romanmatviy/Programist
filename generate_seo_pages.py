@@ -206,6 +206,36 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                 {{ related_services }}
             </div>
         </div>
+
+        <!-- Other Projects Section -->
+        <section class="other-projects">
+            <div class="container">
+                <h2 class="section-title">Корисні сервіси та мої проєкти</h2>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <a href="https://monitortest.pp.ua" target="_blank" rel="noopener">Monitor Test — Тестування монітора</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://keytest.pp.ua" target="_blank" rel="noopener">Key Test — Тестування клавіатури</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://php.apartner.pro" target="_blank" rel="noopener">PHP Course — Курс програмування</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hostpro.apartner.pro/" target="_blank" rel="noopener">HostPro — Надійний хостинг</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://programist.pp.ua" target="_blank" rel="noopener">Programist.pp.ua — Послуги програміста</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hire-web-developer.com" target="_blank" rel="noopener">Hire Web Developer — Веб-розробка</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hirewebdeveloper.pp.ua" target="_blank" rel="noopener">HireWebDeveloper.pp.ua — Веб-розробка</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->

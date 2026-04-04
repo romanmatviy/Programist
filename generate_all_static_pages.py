@@ -414,12 +414,27 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
             </div>
         </div>
         
-        <!-- CTA Section -->
-        <section class="cta-section">
+        <!-- Other Projects Section -->
+        <section class="other-projects">
             <div class="container">
-                <h2>Готові замовити {{ service_name_lower_acc }} в {{ geo_name }}?</h2>
-                <p>Зв'яжіться зі мною для безкоштовної консультації та оцінки вашого проекту</p>
-                <a href="/#contact" class="btn">Замовити консультацію</a>
+                <h2 class="section-title">Корисні сервіси та мої проєкти</h2>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <a href="https://monitortest.pp.ua" target="_blank" rel="noopener">Monitor Test — Тестування монітора</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://keytest.pp.ua" target="_blank" rel="noopener">Key Test — Тестування клавіатури</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://programist.pp.ua" target="_blank" rel="noopener">Programist.pp.ua — Послуги програміста</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hire-web-developer.com" target="_blank" rel="noopener">Hire Web Developer — Веб-розробка</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hirewebdeveloper.pp.ua" target="_blank" rel="noopener">HireWebDeveloper.pp.ua — Веб-розробка</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
