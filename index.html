@@ -32,34 +32,6 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="img/og-image.jpg">
 
-    <!-- Schema.org markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Програміст Роман",
-      "description": "Професійна розробка сайтів, інтернет-магазинів, CRM/ERP систем. Laravel, WordPress, PrestaShop.",
-      "url": "https://programist.matviy.pp.ua/",
-      "logo": "https://programist.matviy.pp.ua/img/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Львів",
-        "addressCountry": "UA"
-      },
-      "telephone": "+380938800822",
-      "email": "info@matviy.pp.ua",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "24"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/romanmatviy/",
-        "https://github.com/romanmatviy"
-      ]
-    }
-    </script>
-    <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 
 <body>
@@ -220,7 +192,25 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="container">
+        <section id="about" class="container about" itemscope itemtype="https://schema.org/ProfessionalService">
+            <meta itemprop="name" content="Програміст Роман">
+            <meta itemprop="description" content="Професійна розробка сайтів, інтернет-магазинів, CRM/ERP систем. Laravel, WordPress, PrestaShop.">
+            <link itemprop="url" href="https://programist.matviy.pp.ua/">
+            <link itemprop="logo" href="https://programist.matviy.pp.ua/img/logo.png">
+            <link itemprop="image" href="https://programist.matviy.pp.ua/img/og-image.jpg">
+            <meta itemprop="telephone" content="+380938800822">
+            <meta itemprop="email" content="info@matviy.pp.ua">
+            <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <meta itemprop="addressLocality" content="Львів">
+                <meta itemprop="addressCountry" content="UA">
+            </div>
+            <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                <meta itemprop="ratingValue" content="5">
+                <meta itemprop="reviewCount" content="24">
+            </div>
+            <link itemprop="sameAs" href="https://www.linkedin.com/in/romanmatviy/">
+            <link itemprop="sameAs" href="https://github.com/romanmatviy">
+            
             <h2 class="section-title">Про мене</h2>
             <div class="about-content">
                 <div class="about-text">

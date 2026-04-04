@@ -109,31 +109,58 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main itemscope itemtype="https://schema.org/ProfessionalService">
+        <meta itemprop="name" content="Програміст Роман - {{ service_name }} {{ city_in }}">
+        <meta itemprop="description" content="Професійні послуги: {{ service_name_lower }} {{ city_in }}. {{ service_description }}">
+        <link itemprop="url" href="https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/{{ city_slug }}/">
+        <link itemprop="image" href="https://programist.matviy.pp.ua/img/og-image.jpg">
+        <meta itemprop="telephone" content="+380938800822">
+        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <meta itemprop="addressLocality" content="{{ city_name }}">
+            <meta itemprop="addressCountry" content="UA">
+        </div>
+        <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <meta itemprop="ratingValue" content="5">
+            <meta itemprop="reviewCount" content="24">
+        </div>
+
         <div class="container">
             <!-- Breadcrumbs -->
-            <div class="breadcrumbs" data-schema="BreadcrumbList">
-                <a href="/">Головна</a> <span>></span> 
-                <a href="/{{ service_slug }}">{{ service_name }}</a> <span>></span> 
-                <a href="/{{ service_slug }}/{{ geo_slug }}">{{ geo_name }}</a> <span>></span> 
-                <span>{{ city_name }}</span>
+            <div class="breadcrumbs">
+                <nav aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style: none; padding: 0; display: flex; gap: 5px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="/">
+                                <span itemprop="name">Головна</span>
+                            </a>
+                            <meta itemprop="position" content="1">
+                        </li>
+                        <span>></span>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="/{{ service_slug }}">
+                                <span itemprop="name">{{ service_name }}</span>
+                            </a>
+                            <meta itemprop="position" content="2">
+                        </li>
+                        <span>></span>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="/{{ service_slug }}/{{ geo_slug }}">
+                                <span itemprop="name">{{ geo_name }}</span>
+                            </a>
+                            <meta itemprop="position" content="3">
+                        </li>
+                        <span>></span>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name">{{ city_name }}</span>
+                            <meta itemprop="position" content="4">
+                        </li>
+                    </ol>
+                </nav>
             </div>
             
             <!-- SEO Content -->
             <div class="seo-content">
                 <h1>{{ service_name }} {{ city_in }} – професійно під ключ</h1>
-                <div data-schema="LocalBusiness" 
-                     data-name="Програміст Роман" 
-                     data-description="Професійні послуги: {{ service_name_lower }} {{ city_in }}" 
-                     data-city="{{ city_name }}" 
-                     data-region="{{ city_name }}">
-                </div>
-                
-                <div data-schema="Service" 
-                     data-service-type="{{ service_name }}" 
-                     data-city="{{ city_name }}" 
-                     data-description="Професійні послуги: {{ service_name_lower }} {{ city_in }}. {{ service_description }}">
-                </div>
                 
                 <p>Потрібні послуги: {{ service_name_lower }} {{ city_in }}? Програміст Роман пропонує професійні рішення для вашого бізнесу. {{ service_content }} Замовляючи {{ service_name_lower_acc }} {{ city_in }}, ви отримуєте сучасне рішення, яке приносить результат.</p>
                 
@@ -317,276 +344,120 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
-# Специфічний контент для кожного сервісу
-service_specific_content = {
-    "rozrobka-saitiv": """
-<h2>Типи сайтів, які я розробляю {{ city_in }}</h2>
-<p>Спеціалізуюсь на створенні різних типів веб-ресурсів для бізнесу {{ city_in }}:</p>
-<ul>
-    <li><strong>Корпоративні сайти</strong> – представництво вашої компанії в інтернеті з детальним описом послуг та продуктів</li>
-    <li><strong>Інтернет-магазини</strong> – функціональні онлайн-платформи для продажу товарів з інтеграцією платіжних систем</li>
-    <li><strong>Лендінги</strong> – висококонверсійні односторінкові сайти для просування конкретних товарів або послуг</li>
-    <li><strong>Каталоги</strong> – зручні онлайн-каталоги продукції з можливістю фільтрації та пошуку</li>
-    <li><strong>CRM/ERP системи</strong> – комплексні рішення для автоматизації бізнес-процесів</li>
-</ul>
-""",
-    "internet-magazin": """
-<h2>Функціонал інтернет-магазинів, які я розробляю {{ city_in }}</h2>
-<p>Створюю інтернет-магазини з різним функціоналом для бізнесу {{ city_in }}:</p>
-<ul>
-    <li><strong>Каталог товарів</strong> – зручна структура з категоріями, підкатегоріями та фільтрами</li>
-    <li><strong>Картки товарів</strong> – детальний опис, характеристики, фото та відгуки</li>
-    <li><strong>Кошик та оформлення замовлення</strong> – зручний процес покупки з мінімальною кількістю кроків</li>
-    <li><strong>Особистий кабінет</strong> – історія замовлень, збережені адреси, улюблені товари</li>
-    <li><strong>Інтеграція з платіжними системами</strong> – LiqPay, WayForPay, Portmone, PayPal</li>
-    <li><strong>Інтеграція з службами доставки</strong> – Нова Пошта, Укрпошта, Meest Express</li>
-    <li><strong>Мультивалютність</strong> – можливість вибору валюти для відображення цін</li>
-    <li><strong>Мультимовність</strong> – підтримка кількох мов інтерфейсу</li>
-</ul>
-""",
-    "wordpress": """
-<h2>WordPress послуги, які я надаю {{ city_in }}</h2>
-<p>Пропоную широкий спектр послуг з WordPress {{ city_in }}:</p>
-<ul>
-    <li><strong>Створення сайтів на WordPress</strong> – від блогів до складних корпоративних сайтів</li>
-    <li><strong>Розробка інтернет-магазинів на WooCommerce</strong> – повнофункціональні рішення для електронної комерції</li>
-    <li><strong>Розробка тем</strong> – створення унікальних тем з нуля або на основі фреймворків</li>
-    <li><strong>Розробка плагінів</strong> – створення кастомних плагінів для розширення функціоналу</li>
-    <li><strong>Оптимізація швидкості</strong> – налаштування кешування, оптимізація бази даних, мінімізація ресурсів</li>
-    <li><strong>Міграція сайтів</strong> – перенесення сайтів на WordPress з інших CMS</li>
-    <li><strong>Оновлення та підтримка</strong> – регулярні оновлення, резервне копіювання, моніторинг безпеки</li>
-</ul>
-""",
-    "prestashop": """
-<h2>PrestaShop послуги, які я надаю {{ city_in }}</h2>
-<p>Пропоную широкий спектр послуг з PrestaShop {{ city_in }}:</p>
-<ul>
-    <li><strong>Створення інтернет-магазинів на PrestaShop</strong> – повнофункціональні рішення для електронної комерції</li>
-    <li><strong>Розробка тем</strong> – створення унікальних тем з нуля або на основі фреймворків</li>
-    <li><strong>Розробка модулів</strong> – створення кастомних модулів для розширення функціоналу</li>
-    <li><strong>Інтеграція з платіжними системами</strong> – LiqPay, WayForPay, Portmone, PayPal</li>
-    <li><strong>Інтеграція з службами доставки</strong> – Нова Пошта, Укрпошта, Meest Express</li>
-    <li><strong>Оптимізація швидкості</strong> – налаштування кешування, оптимізація бази даних, мінімізація ресурсів</li>
-    <li><strong>Міграція магазинів</strong> – перенесення магазинів на PrestaShop з інших CMS</li>
-    <li><strong>Оновлення та підтримка</strong> – регулярні оновлення, резервне копіювання, моніторинг безпеки</li>
-</ul>
-""",
-    "opencart": """
-<h2>OpenCart послуги, які я надаю {{ city_in }}</h2>
-<p>Пропоную широкий спектр послуг з OpenCart {{ city_in }}:</p>
-<ul>
-    <li><strong>Створення інтернет-магазинів на OpenCart</strong> – повнофункціональні рішення для електронної комерції</li>
-    <li><strong>Розробка тем</strong> – створення унікальних тем з нуля або на основі фреймворків</li>
-    <li><strong>Розробка модулів</strong> – створення кастомних модулів для розширення функціоналу</li>
-    <li><strong>Інтеграція з платіжними системами</strong> – LiqPay, WayForPay, Portmone, PayPal</li>
-    <li><strong>Інтеграція з службами доставки</strong> – Нова Пошта, Укрпошта, Meest Express</li>
-    <li><strong>Оптимізація швидкості</strong> – налаштування кешування, оптимізація бази даних, мінімізація ресурсів</li>
-    <li><strong>Міграція магазинів</strong> – перенесення магазинів на OpenCart з інших CMS</li>
-    <li><strong>Оновлення та підтримка</strong> – регулярні оновлення, резервне копіювання, моніторинг безпеки</li>
-</ul>
-""",
-    "laravel": """
-<h2>Laravel послуги, які я надаю {{ city_in }}</h2>
-<p>Пропоную широкий спектр послуг з Laravel {{ city_in }}:</p>
-<ul>
-    <li><strong>Розробка веб-додатків</strong> – створення складних веб-додатків на Laravel</li>
-    <li><strong>Розробка API</strong> – створення RESTful API для мобільних додатків та SPA</li>
-    <li><strong>Інтеграція з зовнішніми сервісами</strong> – платіжні системи, CRM, ERP, соціальні мережі</li>
-    <li><strong>Розробка CRM/ERP систем</strong> – створення кастомних систем для автоматизації бізнес-процесів</li>
-    <li><strong>Оптимізація продуктивності</strong> – кешування, оптимізація запитів до бази даних, профілювання</li>
-    <li><strong>Рефакторинг коду</strong> – покращення існуючого коду, впровадження кращих практик</li>
-    <li><strong>Міграція на Laravel</strong> – перенесення проектів з інших фреймворків на Laravel</li>
-    <li><strong>Підтримка та розвиток</strong> – супровід існуючих Laravel проектів</li>
-</ul>
-""",
-    "vue": """
-<h2>Vue.js послуги, які я надаю {{ city_in }}</h2>
-<p>Пропоную широкий спектр послуг з Vue.js {{ city_in }}:</p>
-<ul>
-    <li><strong>Розробка SPA</strong> – створення односторінкових додатків на Vue.js</li>
-    <li><strong>Розробка PWA</strong> – створення прогресивних веб-додатків з офлайн-функціональністю</li>
-    <li><strong>Інтеграція з API</strong> – взаємодія з RESTful API та GraphQL</li>
-    <li><strong>Розробка компонентів</strong> – створення перевикористовуваних компонентів</li>
-    <li><strong>Міграція на Vue.js</strong> – перенесення проектів з інших фреймворків на Vue.js</li>
-    <li><strong>Оптимізація продуктивності</strong> – lazy loading, code splitting, віртуальний скролінг</li>
-    <li><strong>Тестування</strong> – написання модульних та інтеграційних тестів</li>
-    <li><strong>Підтримка та розвиток</strong> – супровід існуючих Vue.js проектів</li>
-</ul>
-""",
-    "seo-optimizatsiya": """
-<h2>SEO-послуги, які я надаю {{ city_in }}</h2>
-<p>Пропоную широкий спектр SEO-послуг {{ city_in }}:</p>
-<ul>
-    <li><strong>Аудит сайту</strong> – комплексний аналіз сайту з точки зору SEO</li>
-    <li><strong>Технічна оптимізація</strong> – виправлення помилок, оптимізація швидкості, мобільна адаптивність</li>
-    <li><strong>Внутрішня оптимізація</strong> – оптимізація мета-тегів, заголовків, контенту</li>
-    <li><strong>Зовнішня оптимізація</strong> – нарощування якісної посилальної маси</li>
-    <li><strong>Локальне SEO</strong> – оптимізація для місцевих пошукових запитів</li>
-    <li><strong>Контент-маркетинг</strong> – створення оптимізованого контенту для сайту</li>
-    <li><strong>Аналітика та звітність</strong> – відстеження результатів та надання регулярних звітів</li>
-    <li><strong>Консультації</strong> – навчання команди клієнта основам SEO</li>
-</ul>
-""",
-    "pidtrymka-saitiv": """
-<h2>Послуги з підтримки сайтів, які я надаю {{ city_in }}</h2>
-<p>Пропоную широкий спектр послуг з підтримки сайтів {{ city_in }}:</p>
-<ul>
-    <li><strong>Технічна підтримка</strong> – виправлення помилок, оновлення CMS, плагінів, модулів</li>
-    <li><strong>Контент-підтримка</strong> – додавання та оновлення контенту на сайті</li>
-    <li><strong>Моніторинг безпеки</strong> – регулярні перевірки на наявність вразливостей</li>
-    <li><strong>Резервне копіювання</strong> – створення регулярних резервних копій сайту та бази даних</li>
-    <li><strong>Оптимізація швидкості</strong> – покращення швидкості завантаження сайту</li>
-    <li><strong>SEO-підтримка</strong> – підтримка та покращення позицій сайту в пошукових системах</li>
-    <li><strong>Аналітика</strong> – аналіз відвідуваності та поведінки користувачів</li>
-    <li><strong>Консультації</strong> – консультації з питань розвитку сайту</li>
-</ul>
-""",
-    "crm-erp": """
-<h2>CRM/ERP послуги, які я надаю {{ city_in }}</h2>
-<p>Пропоную широкий спектр послуг з CRM/ERP систем {{ city_in }}:</p>
-<ul>
-    <li><strong>Розробка CRM систем</strong> – створення кастомних CRM систем для управління взаємовідносинами з клієнтами</li>
-    <li><strong>Розробка ERP систем</strong> – створення кастомних ERP систем для управління ресурсами підприємства</li>
-    <li><strong>Інтеграція з існуючими системами</strong> – інтеграція CRM/ERP з іншими системами компанії</li>
-    <li><strong>Автоматизація бізнес-процесів</strong> – створення автоматизованих робочих процесів</li>
-    <li><strong>Міграція даних</strong> – перенесення даних з існуючих систем</li>
-    <li><strong>Навчання персоналу</strong> – навчання співробітників роботі з новою системою</li>
-    <li><strong>Технічна підтримка</strong> – супровід та розвиток CRM/ERP систем</li>
-    <li><strong>Консультації</strong> – консультації з питань автоматизації бізнес-процесів</li>
-</ul>
-"""
-}
-
-# Опис сервісів
+# Описи для різних сервісів
 service_descriptions = {
-    "rozrobka-saitiv": "Створення сучасних, швидких та SEO-оптимізованих сайтів для бізнесу.",
-    "internet-magazin": "Розробка функціональних інтернет-магазинів з інтеграцією платіжних систем та CRM.",
-    "wordpress": "Створення та налаштування сайтів на WordPress, розробка тем та плагінів.",
-    "prestashop": "Розробка інтернет-магазинів на PrestaShop з інтеграцією платіжних систем.",
-    "opencart": "Створення та налаштування інтернет-магазинів на OpenCart.",
+    "rozrobka-saitiv": "Створення сучасних та швидких сайтів для бізнесу.",
+    "internet-magazin": "Розробка функціональних інтернет-магазинів з високою конверсією.",
+    "wordpress": "Створення та підтримка сайтів на CMS WordPress будь-якої складності.",
+    "prestashop": "Розробка професійних інтернет-магазинів на платформі PrestaShop.",
+    "opencart": "Створення магазинів на OpenCart з оптимальною структурою.",
     "laravel": "Розробка складних веб-додатків та систем на фреймворку Laravel.",
-    "vue": "Створення сучасних інтерактивних інтерфейсів з використанням Vue.js.",
-    "seo-optimizatsiya": "Комплексна оптимізація сайтів для пошукових систем та підвищення конверсії.",
-    "pidtrymka-saitiv": "Технічна підтримка, оновлення та розвиток існуючих веб-проектів.",
-    "crm-erp": "Розробка та впровадження CRM та ERP систем для автоматизації бізнес-процесів."
+    "vue": "Створення інтерактивних інтерфейсів та SPA на Vue.js.",
+    "seo-optimizatsiya": "Внутрішня та зовнішня SEO оптимізація для виводу в ТОП Google.",
+    "pidtrymka-saitiv": "Технічна підтримка, оновлення та наповнення ваших проектів.",
+    "crm-erp": "Розробка індивідуальних CRM та ERP систем для автоматизації бізнесу."
 }
 
-# Контент для сервісів
+# Текстовий контент для різних сервісів
 service_contents = {
-    "rozrobka-saitiv": "Працюю з Laravel, WordPress, PrestaShop, OpenCart, WooCommerce та Vue.js. Забезпечую SEO-оптимізацію, інтеграцію з платіжними системами та CRM.",
-    "internet-magazin": "Створюю функціональні онлайн-магазини з інтеграцією платіжних систем, служб доставки та CRM. Працюю з PrestaShop, OpenCart, WooCommerce та кастомними рішеннями.",
-    "wordpress": "Розробляю сайти на WordPress будь-якої складності: від блогів до інтернет-магазинів. Створюю унікальні теми та плагіни, оптимізую швидкість та безпеку.",
-    "prestashop": "Створюю інтернет-магазини на PrestaShop з інтеграцією платіжних систем, служб доставки та CRM. Розробляю унікальні теми та модулі.",
-    "opencart": "Розробляю інтернет-магазини на OpenCart з інтеграцією платіжних систем, служб доставки та CRM. Створюю унікальні теми та модулі.",
-    "laravel": "Розробляю складні веб-додатки та системи на фреймворку Laravel. Створюю RESTful API, інтегрую з зовнішніми сервісами, оптимізую продуктивність.",
-    "vue": "Створюю сучасні інтерактивні інтерфейси з використанням Vue.js. Розробляю SPA, PWA, інтегрую з API, оптимізую продуктивність.",
-    "seo-optimizatsiya": "Проводжу комплексну оптимізацію сайтів для пошукових систем: технічний аудит, внутрішню та зовнішню оптимізацію, контент-маркетинг.",
-    "pidtrymka-saitiv": "Забезпечую технічну підтримку, оновлення та розвиток існуючих веб-проектів. Моніторю безпеку, створюю резервні копії, оптимізую швидкість.",
-    "crm-erp": "Розробляю та впроваджую CRM та ERP системи для автоматизації бізнес-процесів. Інтегрую з існуючими системами, навчаю персонал."
+    "rozrobka-saitiv": "Розробка сайту - це перший крок до успіху вашого бізнесу в інтернеті. Я створюю адаптивні, швидкі та SEO-оптимізовані сайти, які допомагають залучати нових клієнтів.",
+    "internet-magazin": "Інтернет-магазин дозволяє продавати товари 24/7. Моя розробка включає налаштування кошика, оплати, доставки та інтеграцію з платіжними системами.",
+    "wordpress": "WordPress - це гнучкість та зручність. Я розробляю унікальні теми, налаштовую плагіни та забезпечую швидку роботу сайту на цій CMS.",
+    "prestashop": "PrestaShop ідеально підходить для великих магазинів. Я пропоную повний цикл розробки: від дизайну до налаштування складних модулів.",
+    "opencart": "OpenCart - популярний вибір для e-commerce. Я створюю швидкі магазини з зручною панеллю керування та необхідним функціоналом.",
+    "laravel": "Laravel дозволяє реалізувати будь-які бізнес-вимоги. Я створюю масштабовані та безпечні рішення для вашого проекту.",
+    "vue": "Vue.js забезпечує плавність роботи інтерфейсу. Я використовую його для створення динамічних елементів та повноцінних SPA додатків.",
+    "seo-optimizatsiya": "SEO допомагає вашому сайту бути помітним. Я проводжу технічний аудит, збираю семантичне ядро та оптимізую кожну сторінку для пошукових систем.",
+    "pidtrymka-saitiv": "Ваш сайт потребує постійного догляду. Я забезпечую стабільну роботу, виправлення помилок та впровадження нових фішок.",
+    "crm-erp": "Автоматизація процесів економить час та гроші. Я створюю індивідуальні системи, які ідеально підходять під ваші бізнес-процеси."
 }
 
-# Відмінки для сервісів (знахідний відмінок)
+# Назви сервісів у знахідному відмінку (для текстів "Замовити що?")
 service_accusative = {
     "розробка сайтів": "розробку сайтів",
     "інтернет-магазин": "інтернет-магазин",
-    "wordpress": "WordPress",
-    "prestashop": "PrestaShop",
-    "opencart": "OpenCart",
-    "laravel": "Laravel",
-    "vue.js": "Vue.js",
-    "SEO оптимізація": "SEO-оптимізацію",
+    "wordpress": "розробку на WordPress",
+    "prestashop": "розробку на PrestaShop",
+    "opencart": "розробку на OpenCart",
+    "laravel": "розробку на Laravel",
+    "vue.js": "розробку на Vue.js",
+    "seo оптимізація": "SEO оптимізацію",
     "підтримка сайтів": "підтримку сайтів",
-    "crm/erp системи": "CRM/ERP системи"
+    "crm/erp системи": "CRM/ERP систему"
 }
 
-def generate_related_services(service_slug, geo_slug, city_slug):
-    """Генерує HTML для пов'язаних послуг"""
-    related_html = ""
-    related_services = [s for s in services.keys() if s != service_slug][:3]
-    
-    for related in related_services:
-        service_name = services[related]
-        service_name_in_city = f"{service_name} {cities[city_slug]['in']}"
-        
-        # Mapping to existing images
-        image_mapping = {
-            "rozrobka-saitiv": "/img/service-rozrobka-saitiv.png",
-            "internet-magazin": "/img/service-internet-magazin.png",
-            "wordpress": "/img/service-support-wordpress.png",
-            "prestashop": "/img/service-prestashop.png",
-        }
-        img_src = image_mapping.get(related, "/img/service-rozrobka-saitiv.png")
-        
-        related_html += f"""
-<div class="service-card">
-    <img src="{img_src}" alt="{service_name_in_city}" loading="lazy">
-    <div class="service-content">
-        <h3>{service_name_in_city}</h3>
-        <p>{service_descriptions[related]}</p>
-        <a href="/{related}/{geo_slug}/{city_slug}/" class="btn">Детальніше</a>
-    </div>
-</div>
-"""
-    
-    return related_html
+# Специфічний контент для сервісів (списки функцій тощо)
+service_specific_content = {
+    "rozrobka-saitiv": "<h3>Типи сайтів, які я розробляю:</h3><ul><li>Лендінги (Landing Page)</li><li>Корпоративні сайти</li><li>Сайти-візитки</li><li>Портали та новинні ресурси</li></ul>",
+    "internet-magazin": "<h3>Функціонал магазину:</h3><ul><li>Фільтрація та пошук товарів</li><li>Особистий кабінет покупця</li><li>Синхронізація з 1С/CRM</li><li>Різні методи оплати (LiqPay, WayForPay)</li></ul>",
+    "wordpress": "<h3>Послуги WordPress:</h3><ul><li>Розробка унікальних тем</li><li>Налаштування WooCommerce</li><li>Оптимізація швидкості</li><li>Виправлення помилок та вірусів</li></ul>",
+    "laravel": "<h3>Розробка на Laravel:</h3><ul><li>Backend API для мобільних додатків</li><li>Складні адмін-панелі</li><li>Системи бронювання та обліку</li><li>Інтеграція зовнішніх сервісів</li></ul>"
+}
 
 def create_directory(path):
     """Створює директорію, якщо вона не існує"""
     if not os.path.exists(path):
         os.makedirs(path)
 
-def generate_seo_pages():
-    """Генерує SEO-сторінки для всіх комбінацій service/geo/city"""
-    total_pages = 0
+def generate_related_services(current_service_slug, city_in):
+    """Генерує блоки інших послуг"""
+    html = ""
+    for slug, name in services.items():
+        if slug != current_service_slug:
+            html += f'<div class="service-card"><a href="/{slug}/ukraine/"><h3>{name} {city_in}</h3></a></div>'
+    return html
+
+def generate_seo_page(service_slug, service_name, geo_slug, geo_name, city_slug, city_data):
+    """Генерує одну SEO-сторінку"""
+    city_name = city_data["name"]
+    city_in = city_data["in"]
+    service_name_lower = service_name.lower()
+    service_name_lower_acc = service_accusative.get(service_name_lower, service_name_lower)
     
+    # Створюємо шлях до директорії
+    dir_path = os.path.join(BASE_DIR, service_slug, geo_slug, city_slug)
+    create_directory(dir_path)
+    
+    # Заповнюємо шаблон
+    page_content = PAGE_TEMPLATE
+    page_content = page_content.replace("{{ service_slug }}", service_slug)
+    page_content = page_content.replace("{{ geo_slug }}", geo_slug)
+    page_content = page_content.replace("{{ city_slug }}", city_slug)
+    page_content = page_content.replace("{{ service_name }}", service_name)
+    page_content = page_content.replace("{{ service_name_lower }}", service_name_lower)
+    page_content = page_content.replace("{{ service_name_lower_acc }}", service_name_lower_acc)
+    page_content = page_content.replace("{{ geo_name }}", geo_name)
+    page_content = page_content.replace("{{ city_name }}", city_name)
+    page_content = page_content.replace("{{ city_in }}", city_in)
+    page_content = page_content.replace("{{ service_description }}", service_descriptions[service_slug])
+    page_content = page_content.replace("{{ service_content }}", service_contents[service_slug])
+    
+    # Додаємо специфічний контент для сервісу
+    specific_content = service_specific_content.get(service_slug, "")
+    specific_content = specific_content.replace("{{ city_in }}", city_in)
+    page_content = page_content.replace("{{ service_specific_content }}", specific_content)
+    
+    # Додаємо пов'язані послуги
+    related_services = generate_related_services(service_slug, city_in)
+    page_content = page_content.replace("{{ related_services }}", related_services)
+    
+    # Зберігаємо файл
+    file_path = os.path.join(dir_path, "index.html")
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(page_content)
+
+def generate_all_pages():
+    """Генерує всі можливі сторінки"""
+    total_pages = 0
     for service_slug, service_name in services.items():
-        service_name_lower = service_name.lower()
-        service_name_lower_acc = service_accusative.get(service_name_lower, service_name_lower)
-        
         for geo_slug, geo_name in geos.items():
             for city_slug, city_data in cities.items():
-                city_name = city_data["name"]
-                city_in = city_data["in"]
-                
-                # Створюємо директорію для міста
-                city_dir = os.path.join(BASE_DIR, service_slug, geo_slug, city_slug)
-                create_directory(city_dir)
-                
-                # Заповнюємо шаблон
-                page_content = PAGE_TEMPLATE
-                page_content = page_content.replace("{{ service_slug }}", service_slug)
-                page_content = page_content.replace("{{ geo_slug }}", geo_slug)
-                page_content = page_content.replace("{{ city_slug }}", city_slug)
-                page_content = page_content.replace("{{ service_name }}", service_name)
-                page_content = page_content.replace("{{ service_name_lower }}", service_name_lower)
-                page_content = page_content.replace("{{ service_name_lower_acc }}", service_name_lower_acc)
-                page_content = page_content.replace("{{ geo_name }}", geo_name)
-                page_content = page_content.replace("{{ city_name }}", city_name)
-                page_content = page_content.replace("{{ city_in }}", city_in)
-                page_content = page_content.replace("{{ service_description }}", service_descriptions[service_slug])
-                page_content = page_content.replace("{{ service_content }}", service_contents[service_slug])
-                
-                # Додаємо специфічний контент для сервісу
-                specific_content = service_specific_content.get(service_slug, "")
-                specific_content = specific_content.replace("{{ city_in }}", city_in)
-                page_content = page_content.replace("{{ service_specific_content }}", specific_content)
-                
-                # Додаємо пов'язані послуги
-                related_services = generate_related_services(service_slug, geo_slug, city_slug)
-                page_content = page_content.replace("{{ related_services }}", related_services)
-                
-                # Зберігаємо файл
-                index_path = os.path.join(city_dir, "index.html")
-                with open(index_path, "w", encoding="utf-8") as f:
-                    f.write(page_content)
-                
+                generate_seo_page(service_slug, service_name, geo_slug, geo_name, city_slug, city_data)
                 total_pages += 1
-                
-                # Виводимо прогрес
                 if total_pages % 50 == 0:
                     print(f"Згенеровано {total_pages} сторінок...")
     
     print(f"Генерація завершена. Всього згенеровано {total_pages} SEO-сторінок.")
 
 if __name__ == "__main__":
-    generate_seo_pages()
+    generate_all_pages()

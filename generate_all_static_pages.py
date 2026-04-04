@@ -54,7 +54,7 @@ def generate_service_index_page(service_slug, service_name):
     service_name_lower = service_name.lower()
     service_name_lower_acc = service_accusative.get(service_name_lower, service_name_lower)
     
-    # Шаблон для індексної сторінки сервісу
+    # Шаблон для індексної сторінки сервісу (Microdata)
     template = """<!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -107,43 +107,44 @@ def generate_service_index_page(service_slug, service_name):
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main itemscope itemtype="https://schema.org/ProfessionalService">
+        <meta itemprop="name" content="Програміст Роман - {{ service_name }}">
+        <meta itemprop="description" content="Професійні послуги: {{ service_name_lower }}. {{ service_description }}">
+        <link itemprop="url" href="https://programist.matviy.pp.ua/{{ service_slug }}/">
+        <link itemprop="image" href="https://programist.matviy.pp.ua/img/og-image.jpg">
+        <meta itemprop="telephone" content="+380938800822">
+        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <meta itemprop="addressLocality" content="Україна">
+            <meta itemprop="addressCountry" content="UA">
+        </div>
+        <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <meta itemprop="ratingValue" content="5">
+            <meta itemprop="reviewCount" content="24">
+        </div>
+
         <div class="container">
             <!-- Breadcrumbs -->
-            <div class="breadcrumbs" data-schema="BreadcrumbList">
-                <a href="/">Головна</a> <span>></span> 
-                <span>{{ service_name }}</span>
+            <div class="breadcrumbs">
+                <nav aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style: none; padding: 0; display: flex; gap: 5px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="/">
+                                <span itemprop="name">Головна</span>
+                            </a>
+                            <meta itemprop="position" content="1">
+                        </li>
+                        <span>></span>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name">{{ service_name }}</span>
+                            <meta itemprop="position" content="2">
+                        </li>
+                    </ol>
+                </nav>
             </div>
             
             <!-- SEO Content -->
             <div class="seo-content">
                 <h1>{{ service_name }} – професійно під ключ</h1>
-                
-                <div data-schema="LocalBusiness" 
-                     data-name="Програміст Роман" 
-                     data-description="Професійні послуги: {{ service_name_lower }}" 
-                     data-city="Україна" 
-                     data-region="Україна">
-                </div>
-                
-                <div data-schema="Service" 
-                     data-service-type="{{ service_name }}" 
-                     data-city="Україна" 
-                     data-description="Професійні послуги: {{ service_name_lower }}. {{ service_description }}">
-                </div>
-                
-                ="LocalBusiness" 
-                     data-name="Програміст Роман" 
-                     data-description="Професійні послуги: {{ service_name_lower }}" 
-                     data-city="Україна" 
-                     data-region="Україна">
-                </div>
-                
-                <div data-schema="Service" 
-                     data-service-type="{{ service_name }}" 
-                     data-city="Україна" 
-                     data-description="Професійні послуги: {{ service_name_lower }}. {{ service_description }}">
-                </div>
                 
                 <p>Потрібні професійні послуги: {{ service_name_lower }}? Програміст Роман пропонує повний спектр послуг для вашого бізнесу. {{ service_content }} Замовляючи {{ service_name_lower_acc }}, ви отримуєте ефективне рішення, яке приносить результат.</p>
                 
@@ -204,6 +205,39 @@ def generate_service_index_page(service_slug, service_name):
                 </ul>
             </div>
         </div>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Відгуки клієнтів</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">Роман розробив для нас інтернет-магазин на PrestaShop. Все було зроблено професійно та в термін. Особливо вражений увагою до SEO-деталей та швидкістю роботи сайту.</p>
+                        <div class="testimonial-author">
+                            <span class="author-name">Олександр Ковальчук</span>
+                            <span class="author-role">Власник магазину TechShop</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">Працюємо з Романом над підтримкою нашого корпоративного сайту на Laravel. Дуже задоволені оперативністю та якістю коду. Рекомендую як надійного розробника.</p>
+                        <div class="testimonial-author">
+                            <span class="author-name">Марина Мельник</span>
+                            <span class="author-role">Маркетинг-директор AgroGroup</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">Замовляли SEO-оптимізацію та редизайн сайту на WordPress. Позиції в Google значно виросли вже за перший місяць після запуску нової версії. Дякуємо за роботу!</p>
+                        <div class="testimonial-author">
+                            <span class="author-name">Сергій Притула</span>
+                            <span class="author-role">Співзасновник Creative Agency</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- CTA Section -->
         <section class="cta-section">
@@ -211,6 +245,36 @@ def generate_service_index_page(service_slug, service_name):
                 <h2>Готові замовити {{ service_name_lower_acc }}?</h2>
                 <p>Зв'яжіться зі мною для безкоштовної консультації та оцінки вашого проекту</p>
                 <a href="/#contact" class="btn">Замовити консультацію</a>
+            </div>
+        </section>
+
+        <!-- Other Projects Section -->
+        <section class="other-projects">
+            <div class="container">
+                <h2 class="section-title">Корисні сервіси та мої проєкти</h2>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <a href="https://monitortest.pp.ua" target="_blank" rel="noopener">Monitor Test — Тестування монітора</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://keytest.pp.ua" target="_blank" rel="noopener">Key Test — Тестування клавіатури</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://php.apartner.pro" target="_blank" rel="noopener">PHP Course — Курс програмування</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hostpro.apartner.pro/" target="_blank" rel="noopener">HostPro — Надійний хостинг</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://programist.pp.ua" target="_blank" rel="noopener">Programist.pp.ua — Послуги програміста</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hire-web-developer.com" target="_blank" rel="noopener">Hire Web Developer — Веб-розробка</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hirewebdeveloper.pp.ua" target="_blank" rel="noopener">HireWebDeveloper.pp.ua — Веб-розробка</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -288,7 +352,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
     service_name_lower = service_name.lower()
     service_name_lower_acc = service_accusative.get(service_name_lower, service_name_lower)
     
-    # Шаблон для індексної сторінки гео
+    # Шаблон для індексної сторінки гео (Microdata)
     template = """<!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -341,44 +405,51 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main itemscope itemtype="https://schema.org/ProfessionalService">
+        <meta itemprop="name" content="Програміст Роман - {{ service_name }} в {{ geo_name }}">
+        <meta itemprop="description" content="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}. {{ service_description }}">
+        <link itemprop="url" href="https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/">
+        <link itemprop="image" href="https://programist.matviy.pp.ua/img/og-image.jpg">
+        <meta itemprop="telephone" content="+380938800822">
+        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <meta itemprop="addressLocality" content="{{ geo_name }}">
+            <meta itemprop="addressCountry" content="UA">
+        </div>
+        <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <meta itemprop="ratingValue" content="5">
+            <meta itemprop="reviewCount" content="24">
+        </div>
+
         <div class="container">
             <!-- Breadcrumbs -->
-            <div class="breadcrumbs" data-schema="BreadcrumbList">
-                <a href="/">Головна</a> <span>></span> 
-                <a href="/{{ service_slug }}">{{ service_name }}</a> <span>></span> 
-                <span>{{ geo_name }}</span>
+            <div class="breadcrumbs">
+                <nav aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style: none; padding: 0; display: flex; gap: 5px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="/">
+                                <span itemprop="name">Головна</span>
+                            </a>
+                            <meta itemprop="position" content="1">
+                        </li>
+                        <span>></span>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="/{{ service_slug }}">
+                                <span itemprop="name">{{ service_name }}</span>
+                            </a>
+                            <meta itemprop="position" content="2">
+                        </li>
+                        <span>></span>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name">{{ geo_name }}</span>
+                            <meta itemprop="position" content="3">
+                        </li>
+                    </ol>
+                </nav>
             </div>
             
             <!-- SEO Content -->
             <div class="seo-content">
                 <h1>{{ service_name }} в {{ geo_name }} – професійно під ключ</h1>
-                
-                <div data-schema="LocalBusiness" 
-                     data-name="Програміст Роман" 
-                     data-description="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}" 
-                     data-city="{{ geo_name }}" 
-                     data-region="{{ geo_name }}">
-                </div>
-                
-                <div data-schema="Service" 
-                     data-service-type="{{ service_name }}" 
-                     data-city="{{ geo_name }}" 
-                     data-description="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}. {{ service_description }}">
-                </div>
-                
-                ="LocalBusiness" 
-                     data-name="Програміст Роман" 
-                     data-description="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}" 
-                     data-city="{{ geo_name }}" 
-                     data-region="{{ geo_name }}">
-                </div>
-                
-                <div data-schema="Service" 
-                     data-service-type="{{ service_name }}" 
-                     data-city="{{ geo_name }}" 
-                     data-description="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}. {{ service_description }}">
-                </div>
                 
                 <p>Потрібні професійні послуги: {{ service_name_lower }} в {{ geo_name }}? Програміст Роман пропонує повний спектр послуг для вашого бізнесу. {{ service_content }} Замовляючи {{ service_name_lower_acc }} в {{ geo_name }}, ви отримуєте ефективне рішення, яке приносить результат.</p>
                 
@@ -440,15 +511,6 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
             </div>
         </div>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <h2>Готові замовити {{ service_name_lower_acc }} в {{ geo_name }}?</h2>
-                <p>Зв'яжіться зі мною для безкоштовної консультації та оцінки вашого проекту</p>
-                <a href="/#contact" class="btn">Замовити консультацію</a>
-            </div>
-        </section>
-        
         <!-- Testimonials Section -->
         <section id="testimonials" class="testimonials">
             <div class="container">
@@ -481,6 +543,14 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                 </div>
             </div>
         </section>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Готові замовити {{ service_name_lower_acc }} в {{ geo_name }}?</h2>
+                <p>Зв'яжіться зі мною для безкоштовної консультації та оцінки вашого проекту</p>
+                <a href="/#contact" class="btn">Замовити консультацію</a>
+            </div>
+        </section>
 
         <!-- Other Projects Section -->
         <section class="other-projects">
@@ -492,6 +562,12 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                     </div>
                     <div class="project-item">
                         <a href="https://keytest.pp.ua" target="_blank" rel="noopener">Key Test — Тестування клавіатури</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://php.apartner.pro" target="_blank" rel="noopener">PHP Course — Курс програмування</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hostpro.apartner.pro/" target="_blank" rel="noopener">HostPro — Надійний хостинг</a>
                     </div>
                     <div class="project-item">
                         <a href="https://programist.pp.ua" target="_blank" rel="noopener">Programist.pp.ua — Послуги програміста</a>
@@ -514,22 +590,22 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                 <div class="footer-col">
                     <h3>Послуги</h3>
                     <ul>
-                        <li><a href="/rozrobka-saitiv/ukraine">Розробка сайтів</a></li>
-                        <li><a href="/internet-magazin/ukraine">Інтернет-магазини</a></li>
-                        <li><a href="/wordpress/ukraine">WordPress розробка</a></li>
-                        <li><a href="/laravel/ukraine">Laravel розробка</a></li>
-                        <li><a href="/crm-erp/ukraine">CRM/ERP системи</a></li>
-                        <li><a href="/seo-optimizatsiya/ukraine">SEO оптимізація</a></li>
+                        <li><a href="/rozrobka-saitiv/ukraine/">Розробка сайтів</a></li>
+                        <li><a href="/internet-magazin/ukraine/">Інтернет-магазини</a></li>
+                        <li><a href="/wordpress/ukraine/">WordPress розробка</a></li>
+                        <li><a href="/laravel/ukraine/">Laravel розробка</a></li>
+                        <li><a href="/crm-erp/ukraine/">CRM/ERP системи</a></li>
+                        <li><a href="/seo-optimizatsiya/ukraine/">SEO оптимізація</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Міста</h3>
                     <ul>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kyiv/">Київ</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/lviv/">Львів</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kharkiv/">Харків</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/odesa/">Одеса</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/dnipro/">Дніпро</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/kyiv/">Київ</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/lviv/">Львів</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/kharkiv/">Харків</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/odesa/">Одеса</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/dnipro/">Дніпро</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -554,12 +630,6 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
 </html>
 """
     
-    # Генеруємо список міст
-    cities_list = ""
-    for city_slug, city_data in cities.items():
-        city_name = city_data["name"]
-        cities_list += f'<li><a href="/{service_slug}/{geo_slug}/{city_slug}/">{service_name} у {city_name}</a></li>\n'
-    
     # Заповнюємо шаблон
     page_content = template
     page_content = page_content.replace("{{ service_slug }}", service_slug)
@@ -570,60 +640,32 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
     page_content = page_content.replace("{{ geo_name }}", geo_name)
     page_content = page_content.replace("{{ service_description }}", service_descriptions[service_slug])
     page_content = page_content.replace("{{ service_content }}", service_contents[service_slug])
-    page_content = page_content.replace("{{ cities_list }}", cities_list)
+    
+    # Додаємо список міст
+    cities_list_html = ""
+    for city_slug, city_data in cities.items():
+        cities_list_html += f'<li><a href="/{service_slug}/{geo_slug}/{city_slug}/">{city_data["name"]}</a></li>\n'
+    page_content = page_content.replace("{{ cities_list }}", cities_list_html)
     
     # Додаємо специфічний контент для сервісу
     specific_content = service_specific_content.get(service_slug, "")
     specific_content = specific_content.replace("{{ city_in }}", f"в {geo_name}")
     page_content = page_content.replace("{{ service_specific_content }}", specific_content)
     
+    page_content = page_content.replace("{{ geo_slug }}", geo_slug)
+    page_content = page_content.replace("{{ geo_name }}", geo_name)
+    
     # Зберігаємо файл
     index_path = os.path.join(BASE_DIR, service_slug, geo_slug, "index.html")
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(page_content)
     
-    print(f"Згенеровано індексну сторінку для {service_name} в {geo_name}")
+    print(f"Згенеровано індексну сторінку для гео: {service_name} / {geo_name}")
 
 def generate_city_page(service_slug, service_name, geo_slug, geo_name, city_slug, city_data):
-    """Генерує сторінку для міста"""
-    service_name_lower = service_name.lower()
-    service_name_lower_acc = service_accusative.get(service_name_lower, service_name_lower)
-    city_name = city_data["name"]
-    city_in = city_data["in"]
-    
-    # Створюємо директорію для міста
-    city_dir = os.path.join(BASE_DIR, service_slug, geo_slug, city_slug)
-    create_directory(city_dir)
-    
-    # Заповнюємо шаблон
-    page_content = PAGE_TEMPLATE
-    page_content = page_content.replace("{{ service_slug }}", service_slug)
-    page_content = page_content.replace("{{ geo_slug }}", geo_slug)
-    page_content = page_content.replace("{{ city_slug }}", city_slug)
-    page_content = page_content.replace("{{ service_name }}", service_name)
-    page_content = page_content.replace("{{ service_name_lower }}", service_name_lower)
-    page_content = page_content.replace("{{ service_name_lower_acc }}", service_name_lower_acc)
-    page_content = page_content.replace("{{ geo_name }}", geo_name)
-    page_content = page_content.replace("{{ city_name }}", city_name)
-    page_content = page_content.replace("{{ city_in }}", city_in)
-    page_content = page_content.replace("{{ service_description }}", service_descriptions[service_slug])
-    page_content = page_content.replace("{{ service_content }}", service_contents[service_slug])
-    
-    # Додаємо специфічний контент для сервісу
-    specific_content = service_specific_content.get(service_slug, "")
-    specific_content = specific_content.replace("{{ city_in }}", city_in)
-    page_content = page_content.replace("{{ service_specific_content }}", specific_content)
-    
-    # Додаємо пов'язані послуги
-    related_services = generate_related_services(service_slug, geo_slug, city_slug)
-    page_content = page_content.replace("{{ related_services }}", related_services)
-    
-    # Зберігаємо файл
-    index_path = os.path.join(city_dir, "index.html")
-    with open(index_path, "w", encoding="utf-8") as f:
-        f.write(page_content)
-    
-    # print(f"Згенеровано сторінку для {service_name} {city_in}")
+    """Генерує сторінку для конкретного міста (викликає функцію з іншого файлу для уникнення дублювання логіки)"""
+    from generate_seo_pages import generate_seo_page
+    generate_seo_page(service_slug, service_name, geo_slug, geo_name, city_slug, city_data)
 
 if __name__ == "__main__":
     generate_all_static_pages()

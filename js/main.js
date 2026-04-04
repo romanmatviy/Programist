@@ -55,80 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Schema.org JSON-LD generator for SEO pages
-  function generateSchemaOrgData() {
-    const schemaElements = document.querySelectorAll('[data-schema]');
-    
-    schemaElements.forEach(element => {
-      const schemaType = element.dataset.schema;
-      let schemaData = {};
-      
-      switch(schemaType) {
-        case 'LocalBusiness':
-          schemaData = {
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            "name": element.dataset.name || "Програміст Роман",
-            "description": element.dataset.description || "Професійна розробка сайтів",
-            "url": window.location.href,
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": element.dataset.city || "Львів",
-              "addressRegion": element.dataset.region || "Львівська область",
-              "addressCountry": "Україна"
-            },
-            "telephone": element.dataset.phone || "+380938800822",
-            "email": element.dataset.email || "info@matviy.pp.ua"
-          };
-          break;
-          
-        case 'Service':
-          schemaData = {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": element.dataset.serviceType || "Розробка сайтів",
-            "provider": {
-              "@type": "Person",
-              "name": "Роман Матвій"
-            },
-            "areaServed": {
-              "@type": "City",
-              "name": element.dataset.city || "Львів"
-            },
-            "description": element.dataset.description || "Професійна розробка сайтів"
-          };
-          break;
-          
-        case 'BreadcrumbList':
-          const breadcrumbs = document.querySelectorAll('.breadcrumbs a');
-          const items = [];
-          
-          breadcrumbs.forEach((crumb, index) => {
-            items.push({
-              "@type": "ListItem",
-              "position": index + 1,
-              "name": crumb.textContent,
-              "item": crumb.href
-            });
-          });
-          
-          schemaData = {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": items
-          };
-          break;
-      }
-      
-      if (Object.keys(schemaData).length > 0) {
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.textContent = JSON.stringify(schemaData);
-        document.head.appendChild(script);
-      }
-    });
-  }
-  
   // Contact form helpers
   function ensureStatusEl(form) {
     let status = form.querySelector('.form-status');
@@ -236,6 +162,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initialize
   initContactForms();
-  // Run Schema.org generator
-  generateSchemaOrgData();
 });
