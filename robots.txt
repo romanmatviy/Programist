@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://programist.matviy.pp.ua/sitemap.xml
