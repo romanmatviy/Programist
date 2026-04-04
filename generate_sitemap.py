@@ -67,21 +67,21 @@ def generate_sitemap():
     today = datetime.datetime.now().strftime("%Y-%m-%d")
     
     # Додаємо головну сторінку
-    add_url(doc, root, BASE_URL, "1.0", today, "daily")
+    add_url(doc, root, f"{BASE_URL}/", "1.0", today, "daily")
     
     # Додаємо сторінки сервісів
     for service in services:
-        service_url = f"{BASE_URL}/{service}"
+        service_url = f"{BASE_URL}/{service}/"
         add_url(doc, root, service_url, "0.9", today, "weekly")
         
         # Додаємо сторінки сервіс/гео
         for geo in geos:
-            geo_url = f"{service_url}/{geo}"
+            geo_url = f"{BASE_URL}/{service}/{geo}/"
             add_url(doc, root, geo_url, "0.8", today, "weekly")
             
             # Додаємо сторінки сервіс/гео/місто
             for city in cities:
-                city_url = f"{geo_url}/{city}"
+                city_url = f"{BASE_URL}/{service}/{geo}/{city}/"
                 add_url(doc, root, city_url, "0.7", today, "weekly")
     
     # Зберігаємо XML файл
