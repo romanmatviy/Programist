@@ -187,7 +187,7 @@ def generate_service_index_page(service_slug, service_name):
                 <h2>{{ service_name }} за регіонами</h2>
                 <p>Я надаю послуги з {{ service_name_lower }} у різних регіонах:</p>
                 <ul class="regions-list">
-                    <li><a href="/{{ service_slug }}/ukraine">{{ service_name }} в Україні</a></li>
+                    <li><a href="/{{ service_slug }}/ukraine/">{{ service_name }} в Україні</a></li>
                 </ul>
             </div>
         </div>
@@ -209,22 +209,22 @@ def generate_service_index_page(service_slug, service_name):
                 <div class="footer-col">
                     <h3>Послуги</h3>
                     <ul>
-                        <li><a href="/rozrobka-saitiv/ukraine">Розробка сайтів</a></li>
-                        <li><a href="/internet-magazin/ukraine">Інтернет-магазини</a></li>
-                        <li><a href="/wordpress/ukraine">WordPress розробка</a></li>
-                        <li><a href="/laravel/ukraine">Laravel розробка</a></li>
-                        <li><a href="/crm-erp/ukraine">CRM/ERP системи</a></li>
-                        <li><a href="/seo-optimizatsiya/ukraine">SEO оптимізація</a></li>
+                        <li><a href="/rozrobka-saitiv/ukraine/">Розробка сайтів</a></li>
+                        <li><a href="/internet-magazin/ukraine/">Інтернет-магазини</a></li>
+                        <li><a href="/wordpress/ukraine/">WordPress розробка</a></li>
+                        <li><a href="/laravel/ukraine/">Laravel розробка</a></li>
+                        <li><a href="/crm-erp/ukraine/">CRM/ERP системи</a></li>
+                        <li><a href="/seo-optimizatsiya/ukraine/">SEO оптимізація</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Міста</h3>
                     <ul>
-                        <li><a href="/{{ service_slug }}/ukraine/kyiv">Київ</a></li>
-                        <li><a href="/{{ service_slug }}/ukraine/lviv">Львів</a></li>
-                        <li><a href="/{{ service_slug }}/ukraine/kharkiv">Харків</a></li>
-                        <li><a href="/{{ service_slug }}/ukraine/odesa">Одеса</a></li>
-                        <li><a href="/{{ service_slug }}/ukraine/dnipro">Дніпро</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/kyiv/">Київ</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/lviv/">Львів</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/kharkiv/">Харків</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/odesa/">Одеса</a></li>
+                        <li><a href="/{{ service_slug }}/ukraine/dnipro/">Дніпро</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -466,11 +466,11 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                 <div class="footer-col">
                     <h3>Міста</h3>
                     <ul>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kyiv">Київ</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/lviv">Львів</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kharkiv">Харків</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/odesa">Одеса</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/dnipro">Дніпро</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kyiv/">Київ</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/lviv/">Львів</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kharkiv/">Харків</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/odesa/">Одеса</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/dnipro/">Дніпро</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -499,7 +499,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
     cities_list = ""
     for city_slug, city_data in cities.items():
         city_name = city_data["name"]
-        cities_list += f'<li><a href="/{service_slug}/{geo_slug}/{city_slug}">{service_name} у {city_name}</a></li>\n'
+        cities_list += f'<li><a href="/{service_slug}/{geo_slug}/{city_slug}/">{service_name} у {city_name}</a></li>\n'
     
     # Заповнюємо шаблон
     page_content = template

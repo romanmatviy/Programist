@@ -245,22 +245,22 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                 <div class="footer-col">
                     <h3>Послуги</h3>
                     <ul>
-                        <li><a href="/rozrobka-saitiv/ukraine">Розробка сайтів</a></li>
-                        <li><a href="/internet-magazin/ukraine">Інтернет-магазини</a></li>
-                        <li><a href="/wordpress/ukraine">WordPress розробка</a></li>
-                        <li><a href="/laravel/ukraine">Laravel розробка</a></li>
-                        <li><a href="/crm-erp/ukraine">CRM/ERP системи</a></li>
-                        <li><a href="/seo-optimizatsiya/ukraine">SEO оптимізація</a></li>
+                        <li><a href="/rozrobka-saitiv/ukraine/">Розробка сайтів</a></li>
+                        <li><a href="/internet-magazin/ukraine/">Інтернет-магазини</a></li>
+                        <li><a href="/wordpress/ukraine/">WordPress розробка</a></li>
+                        <li><a href="/laravel/ukraine/">Laravel розробка</a></li>
+                        <li><a href="/crm-erp/ukraine/">CRM/ERP системи</a></li>
+                        <li><a href="/seo-optimizatsiya/ukraine/">SEO оптимізація</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Міста</h3>
                     <ul>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kyiv">Київ</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/lviv">Львів</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kharkiv">Харків</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/odesa">Одеса</a></li>
-                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/dnipro">Дніпро</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kyiv/">Київ</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/lviv/">Львів</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/kharkiv/">Харків</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/odesa/">Одеса</a></li>
+                        <li><a href="/{{ service_slug }}/{{ geo_slug }}/dnipro/">Дніпро</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -491,7 +491,7 @@ def generate_related_services(service_slug, geo_slug, city_slug):
     <div class="service-content">
         <h3>{service_name_in_city}</h3>
         <p>{service_descriptions[related]}</p>
-        <a href="/{related}/{geo_slug}/{city_slug}" class="btn">Детальніше</a>
+        <a href="/{related}/{geo_slug}/{city_slug}/" class="btn">Детальніше</a>
     </div>
 </div>
 """
