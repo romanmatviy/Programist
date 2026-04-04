@@ -413,6 +413,15 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                 </ul>
             </div>
         </div>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Готові замовити {{ service_name_lower_acc }} в {{ geo_name }}?</h2>
+                <p>Зв'яжіться зі мною для безкоштовної консультації та оцінки вашого проекту</p>
+                <a href="/#contact" class="btn">Замовити консультацію</a>
+            </div>
+        </section>
         
         <!-- Other Projects Section -->
         <section class="other-projects">
