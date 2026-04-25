@@ -276,6 +276,12 @@ def generate_service_index_page(service_slug, service_name):
                     <div class="project-item">
                         <a href="https://hirewebdeveloper.pp.ua" target="_blank" rel="noopener">HireWebDeveloper.pp.ua — Веб-розробка</a>
                     </div>
+                    <div class="project-item">
+                        <a href="https://apartner.pro" target="_blank" rel="noopener">Apartner.pro — Розробка сайтів</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://indexfast.pp.ua" target="_blank" rel="noopener">IndexFast — Швидка індексація сайтів</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -586,6 +592,12 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                     </div>
                     <div class="project-item">
                         <a href="https://hirewebdeveloper.pp.ua" target="_blank" rel="noopener">HireWebDeveloper.pp.ua — Веб-розробка</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://apartner.pro" target="_blank" rel="noopener">Apartner.pro — Розробка сайтів</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://indexfast.pp.ua" target="_blank" rel="noopener">IndexFast — Швидка індексація сайтів</a>
                     </div>
                 </div>
             </div>
