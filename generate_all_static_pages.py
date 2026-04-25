@@ -282,6 +282,15 @@ def generate_service_index_page(service_slug, service_name):
                     <div class="project-item">
                         <a href="https://indexfast.pp.ua" target="_blank" rel="noopener">IndexFast — Швидка індексація сайтів</a>
                     </div>
+                    <div class="project-item">
+                        <a href="https://invoicemaker.me" target="_blank" rel="noopener">Invoice Maker — Створення інвойсів</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hostings.pp.ua" target="_blank" rel="noopener">Hostings.pp.ua — Огляд хостингів</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://pctest.pp.ua" target="_blank" rel="noopener">PC Test — Тестування комп'ютера</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -598,6 +607,15 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                     </div>
                     <div class="project-item">
                         <a href="https://indexfast.pp.ua" target="_blank" rel="noopener">IndexFast — Швидка індексація сайтів</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://invoicemaker.me" target="_blank" rel="noopener">Invoice Maker — Створення інвойсів</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://hostings.pp.ua" target="_blank" rel="noopener">Hostings.pp.ua — Огляд хостингів</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://pctest.pp.ua" target="_blank" rel="noopener">PC Test — Тестування комп'ютера</a>
                     </div>
                 </div>
             </div>
