@@ -90,6 +90,132 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap">
     </noscript>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://programist.matviy.pp.ua/#person",
+          "name": "Роман Матвій",
+          "jobTitle": "Full Stack Senior Developer",
+          "url": "https://programist.matviy.pp.ua",
+          "sameAs": [
+            "https://www.linkedin.com/in/romanmatviy/",
+            "https://github.com/romanmatviy",
+            "https://t.me/MatviyRoman"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://programist.matviy.pp.ua/#organization",
+          "name": "Програміст Роман — {{ service_name }} {{ city_in }}",
+          "description": "{{ title }} Професійні послуги веб-розробника. Якісно та вчасно.",
+          "url": "https://programist.matviy.pp.ua/{{ service_slug }}/ukraine/{{ city_slug }}/",
+          "telephone": "+380938800822",
+          "email": "info@matviy.pp.ua",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "{{ city_name }}",
+            "addressCountry": "UA"
+          },
+          "founder": {
+            "@id": "https://programist.matviy.pp.ua/#person"
+          },
+          "openingHours": "Mo-Fr 09:00-18:00",
+          "image": "https://programist.matviy.pp.ua/img/programist-fullstack-Roman-Senior-Developer.png",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "24"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Олександр Ковальчук" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Роман розробив для нас інтернет-магазин на PrestaShop. Все було зроблено професійно та в термін. Особливо вражений увагою до SEO-деталей та швидкістю роботи сайту."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Марина Мельник" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Працюємо з Романом над підтримкою нашого корпоративного сайту на Laravel. Дуже задоволені оперативністю та якістю коду. Рекомендую як надійного розробника."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Сергій Притула" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Замовляли SEO-оптимізацію та редизайн сайту на WordPress. Позиції в Google значно виросли вже за перший місяць після запуску нової версії. Дякуємо за роботу!"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Скільки коштує розробка сайту?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ціна залежить від обсягу проєкту. Простий сайт-візитка — від $300, інтернет-магазин — від $800, а веб-додаток — від $1500. Я надаю безкоштовну та точну цінову пропозицію після короткого брифу — зазвичай відповідаю протягом 24 годин."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Скільки часу потрібно для завершення проєкту?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Landing Page: 5–10 робочих днів. Корпоративний сайт: 2–4 тижні. Інтернет-магазин: 4–8 тижнів. Складний веб-додаток: від 8 тижнів. Термін завжди узгоджується та підтверджується у договорі."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Чи можу я самостійно редагувати сайт після запуску?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Так. Я реалізую проєкти на WordPress/WooCommerce з безкоштовним навчанням роботі з панеллю адміністрування. Ви зможете додавати контент, товари та зображення самостійно, без будь-яких знань програмування."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Чи надаєте ви технічну підтримку після запуску?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Так. На кожен проєкт надається безкоштовна 30-денна гарантія. Після цього я пропоную погодинну підтримку або щомісячну підписку — умови обговорюються індивідуально."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Як відбувається оплата за проєкт?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Стандартна схема: передоплата 30–50%, решта — після затвердження та перед запуском. Для великих проєктів надається поетапний графік оплати. Доступні способи: банківський переказ, Wise, PayPal."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ви допомагаєте з хостингом та доменом?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Так. Я консультую та допомагаю у виборі хостингу й реєстрації домену .ua або будь-якого іншого. Налаштовую сервер, SSL та DNS. Ви також можете мати власний хостинг — я без проблем підключу ваш проєкт."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Які технології ви використовуєте?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Фронтенд: HTML5, CSS3, JavaScript, Vue.js, React, Next.js. Бекенд: PHP 8+ (Laravel), Node.js. CMS: WordPress, PrestaShop, OpenCart. Бази даних: MySQL, PostgreSQL. Інструменти: Docker, Git, REST API."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     
     <!-- Styles -->
     <link rel="preload" href="/css/style.css?ver=3" as="style">
