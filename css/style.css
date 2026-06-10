@@ -769,3 +769,109 @@ footer {
   }
 }
 
+
+/* New Contact Section */
+.contact-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (min-width: 900px) {
+  .contact-wrap {
+    flex-direction: row;
+    gap: 60px;
+  }
+}
+.contact-left {
+  flex: 1;
+}
+.contact-right {
+  flex: 1;
+}
+.contact-left h2 {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  color: var(--dark-bg);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.contact-left p.c-desc {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.c-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.c-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.c-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.c-info-item h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 1px;
+}
+.c-info-item a, .c-info-item span {
+  color: var(--dark-bg);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+.c-info-item a:hover {
+  color: var(--primary-color);
+}
+.contact-right {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+}
+.contact-form-new .form-group {
+  margin-bottom: 20px;
+}
+.contact-form-new label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--dark-bg);
+}
+.contact-form-new input,
+.contact-form-new select,
+.contact-form-new textarea {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 15px;
+  outline: none;
+  background-color: #f8fafc;
+  transition: border-color 0.2s, background-color 0.2s;
+  box-sizing: border-box;
+}
+.contact-form-new input:focus,
+.contact-form-new select:focus,
+.contact-form-new textarea:focus {
+  border-color: var(--primary-color);
+  background-color: #fff;
+}
+.contact-form-new .btn {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  padding: 16px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
