@@ -191,6 +191,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (overlay) overlay.classList.remove('active');
   }
 
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      // Toggle clicked
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
   // Initialize
   initContactForms();
 });
