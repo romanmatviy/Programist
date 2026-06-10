@@ -74,6 +74,15 @@ def generate_sitemap():
     # Додаємо факультативні сторінки
     if os.path.exists("faq.html"):
         urls.append(format_url(f"{BASE_URL}/faq.html", "0.80", now))
+        
+    # Додаємо блог
+    if os.path.exists("blog/index.html"):
+        urls.append(format_url(f"{BASE_URL}/blog/", "0.80", now))
+    
+    blog_articles = ["seo-trendy-2025.html", "rozrobka-saitiv-kyiv.html"]
+    for article in blog_articles:
+        if os.path.exists(os.path.join("blog", article)):
+            urls.append(format_url(f"{BASE_URL}/blog/{article}", "0.75", now))
     
     # Додаємо сторінки сервісів
     for service in services:
