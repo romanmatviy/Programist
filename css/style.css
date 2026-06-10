@@ -553,3 +553,65 @@ footer {
   margin-bottom: 15px;
   letter-spacing: 2px;
 }
+
+/* About Section with Photo */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.about-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.about-skills {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.about-skills li {
+  font-size: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.about-skills li:last-child {
+  border-bottom: none;
+}
+
+.about-photo {
+  position: relative;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15);
+  display: block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-photo img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(37, 99, 235, 0.22);
+}
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-photo {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
