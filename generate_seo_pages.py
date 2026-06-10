@@ -250,6 +250,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                     <li><a href="/#services">Послуги</a></li>
                     <li><a href="/#portfolio">Портфоліо</a></li>
                     <li><a href="/#about">Про мене</a></li>
+                    <li><a href="/blog/">Блог</a></li>
                     <li><a href="/faq.html">FAQ</a></li>
                     <li><a href="/#contact">Контакти</a></li>
                 </ul>
@@ -627,6 +628,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                         <li><a href="/ux-ui-design/ukraine/">UX/UI Дизайн</a></li>
                         <li><a href="/korporatyvnyi-sait/ukraine/">Корпоративний сайт</a></li>
                         <li><a href="/landing-page/ukraine/">Landing Page</a></li>
+                        <li><a href="/blog/">Блог</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
