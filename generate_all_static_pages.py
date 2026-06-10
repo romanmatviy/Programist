@@ -313,6 +313,7 @@ def generate_service_index_page(service_slug, service_name):
                         <li><a href="/nodejs/ukraine/">Node.js розробка</a></li>
                         <li><a href="/ux-ui-design/ukraine/">UX/UI Дизайн</a></li>
                         <li><a href="/korporatyvnyi-sait/ukraine/">Корпоративний сайт</a></li>
+                        <li><a href="/landing-page/ukraine/">Landing Page</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -655,6 +656,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                         <li><a href="/nodejs/ukraine/">Node.js розробка</a></li>
                         <li><a href="/ux-ui-design/ukraine/">UX/UI Дизайн</a></li>
                         <li><a href="/korporatyvnyi-sait/ukraine/">Корпоративний сайт</a></li>
+                        <li><a href="/landing-page/ukraine/">Landing Page</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

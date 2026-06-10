@@ -26,7 +26,8 @@ services = [
     "pidtrymka-saitiv",
     "crm-erp",
     "ux-ui-design",
-    "korporatyvnyi-sait"
+    "korporatyvnyi-sait",
+    "landing-page"
 ]
 
 # Список гео (поки тільки Україна)
