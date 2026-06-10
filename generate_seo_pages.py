@@ -42,29 +42,29 @@ geos = {
 
 # Список міст з відмінками (називний - "у/в місті")
 cities = {
-    "kyiv": {"name": "Київ", "in": "у Києві"},
-    "lviv": {"name": "Львів", "in": "у Львові"},
-    "kharkiv": {"name": "Харків", "in": "у Харкові"},
-    "odesa": {"name": "Одеса", "in": "в Одесі"},
-    "dnipro": {"name": "Дніпро", "in": "у Дніпрі"},
-    "zaporizhzhia": {"name": "Запоріжжя", "in": "у Запоріжжі"},
-    "vinnytsia": {"name": "Вінниця", "in": "у Вінниці"},
-    "poltava": {"name": "Полтава", "in": "у Полтаві"},
-    "chernivtsi": {"name": "Чернівці", "in": "у Чернівцях"},
-    "cherkasy": {"name": "Черкаси", "in": "у Черкасах"},
-    "chernihiv": {"name": "Чернігів", "in": "у Чернігові"},
-    "zhytomyr": {"name": "Житомир", "in": "у Житомирі"},
-    "ivano-frankivsk": {"name": "Івано-Франківськ", "in": "в Івано-Франківську"},
-    "rivne": {"name": "Рівне", "in": "у Рівному"},
-    "lutsk": {"name": "Луцьк", "in": "у Луцьку"},
-    "ternopil": {"name": "Тернопіль", "in": "у Тернополі"},
-    "mykolaiv": {"name": "Миколаїв", "in": "у Миколаєві"},
-    "khmelnytskyi": {"name": "Хмельницький", "in": "у Хмельницькому"},
-    "sumy": {"name": "Суми", "in": "у Сумах"},
-    "kropyvnytskyi": {"name": "Кропивницький", "in": "у Кропивницькому"},
-    "uzhorod": {"name": "Ужгород", "in": "в Ужгороді"},
-    "kryvyi-rih": {"name": "Кривий Ріг", "in": "у Кривому Розі"},
-    "mariupol": {"name": "Маріуполь", "in": "у Маріуполі"}
+    'kyiv': {'name': 'Київ', 'in': 'у Києві', 'coords': (50.4501, 30.5234)},
+    'lviv': {'name': 'Львів', 'in': 'у Львові', 'coords': (49.8397, 24.0297)},
+    'kharkiv': {'name': 'Харків', 'in': 'у Харкові', 'coords': (49.9935, 36.2304)},
+    'odesa': {'name': 'Одеса', 'in': 'в Одесі', 'coords': (46.4825, 30.7233)},
+    'dnipro': {'name': 'Дніпро', 'in': 'у Дніпрі', 'coords': (48.4647, 35.0461)},
+    'zaporizhzhia': {'name': 'Запоріжжя', 'in': 'у Запоріжжі', 'coords': (47.8388, 35.1395)},
+    'vinnytsia': {'name': 'Вінниця', 'in': 'у Вінниці', 'coords': (49.2330, 28.4682)},
+    'poltava': {'name': 'Полтава', 'in': 'у Полтаві', 'coords': (49.5882, 34.5514)},
+    'chernivtsi': {'name': 'Чернівці', 'in': 'у Чернівцях', 'coords': (48.2914, 25.9333)},
+    'cherkasy': {'name': 'Черкаси', 'in': 'у Черкасах', 'coords': (49.4444, 32.0597)},
+    'chernihiv': {'name': 'Чернігів', 'in': 'у Чернігові', 'coords': (51.4982, 31.2893)},
+    'zhytomyr': {'name': 'Житомир', 'in': 'у Житомирі', 'coords': (50.2546, 28.6586)},
+    'ivano-frankivsk': {'name': 'Івано-Франківськ', 'in': 'в Івано-Франківську', 'coords': (48.9226, 24.7111)},
+    'khmelnytskyi': {'name': 'Хмельницький', 'in': 'у Хмельницькому', 'coords': (49.4229, 26.9871)},
+    'ternopil': {'name': 'Тернопіль', 'in': 'у Тернополі', 'coords': (49.5535, 25.5947)},
+    'rivne': {'name': 'Рівне', 'in': 'у Рівному', 'coords': (50.6199, 26.2516)},
+    'lutsk': {'name': 'Луцьк', 'in': 'у Луцьку', 'coords': (50.7472, 25.3253)},
+    'sumy': {'name': 'Суми', 'in': 'у Сумах', 'coords': (50.9077, 34.7981)},
+    'mykolaiv': {'name': 'Миколаїв', 'in': 'у Миколаєві', 'coords': (46.9750, 31.9945)},
+    'kropyvnytskyi': {'name': 'Кропивницький', 'in': 'у Кропивницькому', 'coords': (48.5079, 32.2623)},
+    'uzhorod': {'name': 'Ужгород', 'in': 'в Ужгороді', 'coords': (48.6208, 22.2878)},
+    'kryvyi-rih': {'name': 'Кривий Ріг', 'in': 'у Кривому Розі', 'coords': (47.9105, 33.3917)},
+    'mariupol': {'name': 'Маріуполь', 'in': 'у Маріуполі', 'coords': (47.0971, 37.5433)}
 }
 
 # Шаблон HTML-сторінки
@@ -119,6 +119,11 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         "@type": "PostalAddress",
         "addressLocality": "{{ city_name }}",
         "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": {{ geo_lat }},
+        "longitude": {{ geo_lon }}
       },
       "areaServed": {
         "@type": "City",
@@ -338,7 +343,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                     </ul>
                 </div>
                 <div class="about-photo">
-                    <img src="/img/programist-fullstack-Roman-Senior-Developer.png" alt="Програміст Роман Матвій — Full Stack Senior Developer" loading="lazy">
+                    <img src="/img/programist-fullstack-Roman-Senior-Developer.png" alt="Програміст Роман Матвій — Full Stack Senior Developer" width="420" height="420" loading="lazy">
                 </div>
             </div>
         </section>
