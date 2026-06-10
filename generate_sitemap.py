@@ -25,7 +25,8 @@ services = [
     "seo-optimizatsiya",
     "pidtrymka-saitiv",
     "crm-erp",
-    "ux-ui-design"
+    "ux-ui-design",
+    "korporatyvnyi-sait"
 ]
 
 # Список гео (поки тільки Україна)
