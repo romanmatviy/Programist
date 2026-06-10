@@ -93,7 +93,42 @@ def generate_service_index_page(service_slug, service_name):
     <meta property="og:description" content="Професійні послуги: {{ service_name_lower }}. {{ service_description }} Замовте {{ service_name_lower_acc }} у програміста Романа.">
     <meta property="og:url" content="https://programist.matviy.pp.ua/{{ service_slug }}/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="/img/og-image.jpg">
+    <meta property="og:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Програміст Роман — {{ service_name }}",
+      "url": "https://programist.matviy.pp.ua/{{ service_slug }}/",
+      "description": "Професійні послуги: {{ service_name_lower }}. {{ service_description }}",
+      "telephone": "+380938800822",
+      "email": "info@matviy.pp.ua",
+      "image": "https://programist.matviy.pp.ua/img/og-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Львів",
+        "addressCountry": "UA"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ukraine"
+      },
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "24"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/romanmatviy/",
+        "https://github.com/romanmatviy"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
