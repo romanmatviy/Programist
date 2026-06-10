@@ -393,6 +393,43 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
             </div>
         </section>
 
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+          <div class="container">
+            <h2 class="section-title">Часті запитання</h2>
+            <div class="faq-col">
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">Скільки коштує розробка сайту?<span class="faq-ic">+</span></button>
+                <div class="faq-a"><p>Ціна залежить від обсягу проєкту. Простий сайт-візитка — від $300, інтернет-магазин — від $800, а веб-додаток — від $1500. Я надаю безкоштовну та точну цінову пропозицію після короткого брифу — зазвичай відповідаю протягом 24 годин.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">Скільки часу потрібно для завершення проєкту?<span class="faq-ic">+</span></button>
+                <div class="faq-a"><p>Landing Page: 5–10 робочих днів. Корпоративний сайт: 2–4 тижні. Інтернет-магазин: 4–8 тижнів. Складний веб-додаток: від 8 тижнів. Термін завжди узгоджується та підтверджується у договорі.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">Чи можу я самостійно редагувати сайт після запуску?<span class="faq-ic">+</span></button>
+                <div class="faq-a"><p>Так. Я реалізую проєкти на WordPress/WooCommerce з безкоштовним навчанням роботі з панеллю адміністрування. Ви зможете додавати контент, товари та зображення самостійно, без будь-яких знань програмування.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">Чи надаєте ви технічну підтримку після запуску?<span class="faq-ic">+</span></button>
+                <div class="faq-a"><p>Так. На кожен проєкт надається безкоштовна 30-денна гарантія. Після цього я пропоную погодинну підтримку або щомісячну підписку — умови обговорюються індивідуально.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">Як відбувається оплата за проєкт?<span class="faq-ic">+</span></button>
+                <div class="faq-a"><p>Стандартна схема: передоплата 30–50%, решта — після затвердження та перед запуском. Для великих проєктів надається поетапний графік оплати. Доступні способи: банківський переказ, Wise, PayPal.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">Ви допомагаєте з хостингом та доменом?<span class="faq-ic">+</span></button>
+                <div class="faq-a"><p>Так. Я консультую та допомагаю у виборі хостингу й реєстрації домену .ua або будь-якого іншого. Налаштовую сервер, SSL та DNS. Ви також можете мати власний хостинг — я без проблем підключу ваш проєкт.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">Які технології ви використовуєте?<span class="faq-ic">+</span></button>
+                <div class="faq-a"><p>Фронтенд: HTML5, CSS3, JavaScript, Vue.js, React, Next.js. Бекенд: PHP 8+ (Laravel), Node.js. CMS: WordPress, PrestaShop, OpenCart. Бази даних: MySQL, PostgreSQL. Інструменти: Docker, Git, REST API.</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="container py-80">
             <h2 class="section-title">Контакти</h2>
