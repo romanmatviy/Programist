@@ -82,7 +82,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/style.css?ver=2">
+    <link rel="stylesheet" href="/css/style.css?ver=3">
     
     <!-- Open Graph -->
     <meta property="og:title" content="{{ service_name }} {{ city_in }} | Програміст Роман (RomanDev)">
@@ -393,7 +393,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     </footer>
 
     <!-- Scripts -->
-    <script src="/js/main.js?ver=2"></script>
+    <script src="/js/main.js?ver=3"></script>
     
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
