@@ -86,6 +86,20 @@ document.addEventListener('DOMContentLoaded', function() {
   function serializeForm(form) {
     const data = new FormData(form);
     data.append('source', window.location.href);
+    
+    // Append extra fields to message for basic email processing
+    let message = data.get('message') || '';
+    const service = data.get('service');
+    const budget = data.get('budget');
+    
+    if (service || budget) {
+      let extra = [];
+      if (service) extra.push(`Тип послуги: ${service}`);
+      if (budget) extra.push(`Бюджет: ${budget}`);
+      
+      data.set('message', extra.join('\n') + '\n\n' + message);
+    }
+    
     return data;
   }
 
@@ -118,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function initContactForms() {
-    document.querySelectorAll('form.contact-form').forEach(form => {
+    document.querySelectorAll('form.contact-form, form.contact-form-new').forEach(form => {
       if (form.dataset.enhanced === '1') return;
       form.dataset.enhanced = '1';
       form.addEventListener('submit', function(e) {

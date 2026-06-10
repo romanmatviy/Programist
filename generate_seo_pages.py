@@ -444,7 +444,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     </footer>
 
     <!-- Scripts -->
-    <script src="/js/main.js?ver=3"></script>
+    <script src="/js/main.js?ver=4"></script>
     
 <!--Start of Tawk.to Script (Deferred)-->
 <script type="text/javascript">
