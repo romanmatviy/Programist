@@ -273,6 +273,30 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
             </div>
         </section>
 
+        <!-- About Section -->
+        <section id="about" class="container about">
+            <h2 class="section-title">Про мене</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Я Роман Матвій, професійний веб-розробник з багаторічним досвідом створення сайтів та
+                        веб-додатків для бізнесу. Спеціалізуюсь на розробці з використанням сучасних технологій:
+                        Laravel, WordPress, PrestaShop, Vue.js, Next.js, Node.js.</p>
+                    <p>Моя мета — створювати не просто сайти, а ефективні інструменти для розвитку вашого бізнесу. Кожен
+                        проект розробляється з урахуванням SEO-оптимізації та зручності користувачів.</p>
+                    <ul class="about-skills">
+                        <li>✅ Понад 10 років досвіду у веб-розробці</li>
+                        <li>✅ Більше 500 успішних проектів</li>
+                        <li>✅ Спеціалізація: Laravel, WordPress, Vue.js, Next.js</li>
+                        <li>✅ SEO-оптимізація та висока швидкість сайтів</li>
+                        <li>✅ Підтримка після запуску проекту</li>
+                    </ul>
+                </div>
+                <div class="about-photo">
+                    <img src="/img/programist-fullstack-Roman-Senior-Developer.png" alt="Програміст Роман Матвій — Full Stack Senior Developer" loading="lazy">
+                </div>
+            </div>
+        </section>
+
         <!-- Other Projects Section -->
         <section class="other-projects">
             <div class="container">
