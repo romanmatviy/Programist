@@ -79,10 +79,10 @@ def generate_sitemap():
     if os.path.exists("blog/index.html"):
         urls.append(format_url(f"{BASE_URL}/blog/", "0.80", now))
     
-    blog_articles = ["seo-trendy-2025.html", "rozrobka-saitiv-kyiv.html"]
-    for article in blog_articles:
-        if os.path.exists(os.path.join("blog", article)):
-            urls.append(format_url(f"{BASE_URL}/blog/{article}", "0.75", now))
+    if os.path.exists("blog"):
+        for file in os.listdir("blog"):
+            if file.endswith(".html") and file != "index.html":
+                urls.append(format_url(f"{BASE_URL}/blog/{file}", "0.75", now))
     
     # Додаємо сторінки сервісів
     for service in services:
