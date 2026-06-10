@@ -121,6 +121,16 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
             "addressLocality": "{{ city_name }}",
             "addressCountry": "UA"
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": {{ geo_lat }},
+            "longitude": {{ geo_lon }}
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "{{ city_name }}"
+          },
+          "priceRange": "$$",
           "founder": {
             "@id": "https://programist.matviy.pp.ua/#person"
           },
@@ -229,44 +239,6 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <meta property="og:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Програміст Роман — {{ service_name }} {{ city_in }}",
-      "url": "https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/{{ city_slug }}/",
-      "description": "Професійні послуги: {{ service_name_lower }} {{ city_in }}. {{ service_description }}",
-      "telephone": "+380938800822",
-      "email": "info@matviy.pp.ua",
-      "image": "https://programist.matviy.pp.ua/img/og-image.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "{{ city_name }}",
-        "addressCountry": "UA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": {{ geo_lat }},
-        "longitude": {{ geo_lon }}
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "{{ city_name }}"
-      },
-      "priceRange": "$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "24"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/romanmatviy/",
-        "https://github.com/romanmatviy"
-      ]
-    }
-    </script>
 </head>
 <body>
     <!-- Header -->
