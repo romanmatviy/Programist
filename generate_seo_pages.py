@@ -574,6 +574,12 @@ def generate_seo_page(service_slug, service_name, geo_slug, geo_name, city_slug,
     page_content = page_content.replace("{{ geo_name }}", geo_name)
     page_content = page_content.replace("{{ city_name }}", city_name)
     page_content = page_content.replace("{{ city_in }}", city_in)
+    
+    # Coordinates
+    lat, lon = city_data.get("coords", (0, 0))
+    page_content = page_content.replace("{{ geo_lat }}", str(lat))
+    page_content = page_content.replace("{{ geo_lon }}", str(lon))
+    
     page_content = page_content.replace("{{ service_description }}", service_descriptions[service_slug])
     page_content = page_content.replace("{{ service_content }}", service_contents[service_slug])
     
