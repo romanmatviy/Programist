@@ -24,7 +24,8 @@ services = [
     "vue",
     "seo-optimizatsiya",
     "pidtrymka-saitiv",
-    "crm-erp"
+    "crm-erp",
+    "ux-ui-design"
 ]
 
 # Список гео (поки тільки Україна)
