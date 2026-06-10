@@ -395,17 +395,23 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <!-- Scripts -->
     <script src="/js/main.js?ver=3"></script>
     
-<!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script (Deferred)-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69f30e09b0ebb21c33f8cefa/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+function loadTawkTo() {
+    if (window.tawkToLoaded) return;
+    window.tawkToLoaded = true;
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/69f30e09b0ebb21c33f8cefa/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+}
+setTimeout(loadTawkTo, 3000);
+window.addEventListener('scroll', loadTawkTo, { once: true, passive: true });
+window.addEventListener('mousemove', loadTawkTo, { once: true, passive: true });
+window.addEventListener('touchstart', loadTawkTo, { once: true, passive: true });
 </script>
 <!--End of Tawk.to Script-->
 </body>
