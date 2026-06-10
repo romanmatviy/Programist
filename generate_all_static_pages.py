@@ -6,6 +6,12 @@
 import os
 import shutil
 import re
+
+def minify_css(css_content):
+    css_content = re.sub(r'/\*.*?\*/', '', css_content, flags=re.DOTALL)
+    css_content = re.sub(r'\s+', ' ', css_content)
+    css_content = re.sub(r'\s*([\{\}\:\;\,\>])\s*', r'\1', css_content)
+    return css_content.strip()
 from generate_seo_pages import (
     services, geos, cities, PAGE_TEMPLATE, service_specific_content,
     service_descriptions, service_contents, service_accusative,
@@ -788,6 +794,18 @@ window.addEventListener('touchstart', loadTawkTo, { once: true, passive: true })
     specific_content = service_specific_content.get(service_slug, "")
     specific_content = specific_content.replace("{{ city_in }}", f"в {geo_name}")
     page_content = page_content.replace("{{ service_specific_content }}", specific_content)
+    
+    # Додаємо пов'язані послуги
+    related_services = generate_related_services(service_slug, f"в {geo_name}")
+    page_content = page_content.replace("{{ related_services }}", related_services)
+    
+    # Minify and inject CSS inline
+    css_path = os.path.join(BASE_DIR, "css", "style.css")
+    if os.path.exists(css_path):
+        with open(css_path, "r", encoding="utf-8") as f:
+            minified_css = minify_css(f.read())
+            css_links = '<link rel="preload" href="/css/style.css?ver=3" as="style">\n    <link rel="stylesheet" href="/css/style.css?ver=3">'
+            page_content = page_content.replace(css_links, f'<style>{minified_css}</style>')
     
     page_content = page_content.replace("{{ geo_slug }}", geo_slug)
     page_content = page_content.replace("{{ geo_name }}", geo_name)

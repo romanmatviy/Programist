@@ -7,6 +7,12 @@ import os
 import shutil
 import re
 
+def minify_css(css_content):
+    css_content = re.sub(r'/\*.*?\*/', '', css_content, flags=re.DOTALL)
+    css_content = re.sub(r'\s+', ' ', css_content)
+    css_content = re.sub(r'\s*([\{\}\:\;\,\>])\s*', r'\1', css_content)
+    return css_content.strip()
+
 # Базова директорія проекту
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -539,6 +545,14 @@ def generate_seo_page(service_slug, service_name, geo_slug, geo_name, city_slug,
     # Додаємо пов'язані послуги
     related_services = generate_related_services(service_slug, city_in)
     page_content = page_content.replace("{{ related_services }}", related_services)
+    
+    # Minify and inject CSS inline
+    css_path = os.path.join(BASE_DIR, "css", "style.css")
+    if os.path.exists(css_path):
+        with open(css_path, "r", encoding="utf-8") as f:
+            minified_css = minify_css(f.read())
+            css_links = '<link rel="preload" href="/css/style.css?ver=3" as="style">\n    <link rel="stylesheet" href="/css/style.css?ver=3">'
+            page_content = page_content.replace(css_links, f'<style>{minified_css}</style>')
     
     # Зберігаємо файл
     file_path = os.path.join(dir_path, "index.html")
