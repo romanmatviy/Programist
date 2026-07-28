@@ -1,0 +1,48 @@
+# Програміст Роман (RomanDev)
+
+> Розробка сайтів, інтернет-магазинів, CRM/ERP систем
+
+Професійна веб-розробка з понад 10-річним досвідом (більше 500 успішних проєктів). Спеціалізуюся на розробці з використанням сучасних технологій, створенні ефективних інструментів для бізнесу з урахуванням SEO-оптимізації та зручності користувачів.
+
+## Technologies we use
+- **Frontend**: HTML5, CSS3, JavaScript, Vue.js, React, Next.js
+- **Backend**: PHP 8+ (Laravel), Node.js
+- **CMS & E-commerce**: WordPress, PrestaShop, OpenCart, WooCommerce
+- **Databases & Tools**: MySQL, PostgreSQL, Docker, Git, REST API
+
+## Our Services
+- [Розробка сайтів](https://programist.matviy.pp.ua/rozrobka-saitiv/ukraine/)
+- [Інтернет-магазини](https://programist.matviy.pp.ua/internet-magazin/ukraine/)
+- [WordPress розробка](https://programist.matviy.pp.ua/wordpress/ukraine/)
+- [PrestaShop розробка](https://programist.matviy.pp.ua/prestashop/ukraine/)
+- [Laravel розробка](https://programist.matviy.pp.ua/laravel/ukraine/)
+- [CRM/ERP системи](https://programist.matviy.pp.ua/crm-erp/ukraine/)
+- [SEO оптимізація](https://programist.matviy.pp.ua/seo-optimizatsiya/ukraine/)
+- [Next.js розробка](https://programist.matviy.pp.ua/nextjs/ukraine/)
+- [Node.js розробка](https://programist.matviy.pp.ua/nodejs/ukraine/)
+- [UX/UI Дизайн](https://programist.matviy.pp.ua/ux-ui-design/ukraine/)
+- [Корпоративний сайт](https://programist.matviy.pp.ua/korporatyvnyi-sait/ukraine/)
+- [Landing Page](https://programist.matviy.pp.ua/landing-page/ukraine/)
+
+## Posts
+- [Безпека сайту](https://programist.matviy.pp.ua/blog/bezpeka-saitu.html)
+- [Laravel 11 Оновлення](https://programist.matviy.pp.ua/blog/laravel-11-onovlennia.html)
+- [Mobile First Підхід](https://programist.matviy.pp.ua/blog/mobile-first-pidkhid.html)
+- [Прискорення WordPress](https://programist.matviy.pp.ua/blog/pryskorennya-wordpress.html)
+- [Розробка сайтів Київ](https://programist.matviy.pp.ua/blog/rozrobka-saitiv-kyiv.html)
+- [SEO Інтернет-магазину](https://programist.matviy.pp.ua/blog/seo-internet-magazynu.html)
+- [SEO Тренди 2025](https://programist.matviy.pp.ua/blog/seo-trendy-2025.html)
+
+## Key Pages
+- [Home](https://programist.matviy.pp.ua/)
+- [FAQ](https://programist.matviy.pp.ua/faq.html)
+- [Blog](https://programist.matviy.pp.ua/blog/)
+
+## Site Map
+You can find all URLs in our XML sitemap:
+[sitemap.xml](https://programist.matviy.pp.ua/sitemap.xml)
+
+## Contact Information
+- **Email**: [info@matviy.pp.ua](mailto:info@matviy.pp.ua)
+- **Phone**: [tel:+380938800822](tel:+380938800822)
+- **Website**: [devroman.dev](https://devroman.dev)
