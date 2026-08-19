@@ -471,7 +471,7 @@ def generate_service_index_page(service_slug, service_name):
     </footer>
 
     <!-- Scripts -->
-    <script src="/js/main.js?ver=3"></script>
+    <script src="/js/main.js?ver=4"></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -488,7 +488,7 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 
     <script>
-    // Lead Magnet Logic
+    // Lead Magnet Modal — open after delay
     setTimeout(() => {
         const modal = document.getElementById('leadMagnetModal');
         if (modal && !localStorage.getItem('lm_closed')) {
@@ -504,37 +504,6 @@ s0.parentNode.insertBefore(s1,s0);
                 localStorage.setItem('lm_closed', 'true');
             }
         }
-    });
-
-    document.querySelectorAll('.lm-form').forEach(form => {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]');
-            const websiteInput = form.querySelector('input[name="website"]');
-            const messageInput = form.querySelector('.hidden-message');
-            const website = websiteInput ? websiteInput.value : 'Не вказано';
-            messageInput.value = "Запит на безкоштовний SEO-аудит.\\nСайт: " + website;
-            const formData = new FormData(form);
-            btn.disabled = true;
-            btn.textContent = 'Відправка...';
-            try {
-                const res = await fetch(form.action, { method: 'POST', body: formData });
-                if (res.ok) {
-                    form.style.display = 'none';
-                    const successMsg = form.nextElementSibling;
-                    if (successMsg && successMsg.classList.contains('lm-success')) {
-                        successMsg.style.display = 'block';
-                    }
-                } else {
-                    alert('Сталася помилка.');
-                }
-            } catch (err) {
-                alert('Сталася помилка.');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Отримати аудит 🚀';
-            }
-        });
     });
     </script>
     
@@ -1007,7 +976,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
     </footer>
 
     <!-- Scripts -->
-    <script src="/js/main.js?ver=3"></script>
+    <script src="/js/main.js?ver=4"></script>
 
 <!--Start of Tawk.to Script (Deferred)-->
 <script type="text/javascript">
@@ -1030,7 +999,7 @@ window.addEventListener('touchstart', loadTawkTo, { once: true, passive: true })
 <!--End of Tawk.to Script-->
 
     <script>
-    // Lead Magnet Logic
+    // Lead Magnet Modal — open after delay
     setTimeout(() => {
         const modal = document.getElementById('leadMagnetModal');
         if (modal && !localStorage.getItem('lm_closed')) {
@@ -1046,37 +1015,6 @@ window.addEventListener('touchstart', loadTawkTo, { once: true, passive: true })
                 localStorage.setItem('lm_closed', 'true');
             }
         }
-    });
-
-    document.querySelectorAll('.lm-form').forEach(form => {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]');
-            const websiteInput = form.querySelector('input[name="website"]');
-            const messageInput = form.querySelector('.hidden-message');
-            const website = websiteInput ? websiteInput.value : 'Не вказано';
-            messageInput.value = "Запит на безкоштовний SEO-аудит.\\nСайт: " + website;
-            const formData = new FormData(form);
-            btn.disabled = true;
-            btn.textContent = 'Відправка...';
-            try {
-                const res = await fetch(form.action, { method: 'POST', body: formData });
-                if (res.ok) {
-                    form.style.display = 'none';
-                    const successMsg = form.nextElementSibling;
-                    if (successMsg && successMsg.classList.contains('lm-success')) {
-                        successMsg.style.display = 'block';
-                    }
-                } else {
-                    alert('Сталася помилка.');
-                }
-            } catch (err) {
-                alert('Сталася помилка.');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Отримати аудит 🚀';
-            }
-        });
     });
     </script>
     
