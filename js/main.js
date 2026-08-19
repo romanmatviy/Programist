@@ -104,14 +104,25 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   async function submitContactForm(form) {
-    const status = ensureStatusEl(form);
+    const isLmForm = form.classList.contains('lm-form');
+    const lmSuccess = isLmForm ? form.closest('.lm-form-wrap, .lm-modal-content')?.querySelector('.lm-success') : null;
+    const status = isLmForm ? null : ensureStatusEl(form);
     const btn = form.querySelector('button[type="submit"]');
     const prevText = btn ? btn.textContent : '';
     if (btn) { btn.disabled = true; btn.textContent = 'Надсилання...'; }
-    status.textContent = '';
-    status.classList.remove('success','error');
+    if (status) { status.textContent = ''; status.classList.remove('success', 'error'); }
     try {
-      const targetUrl = 'https://bot.programist.top/api/contact.php'; 
+      const targetUrl = 'https://bot.programist.top/api/contact.php';
+
+      // For lm-form: build message from website field
+      if (isLmForm) {
+        const websiteInput = form.querySelector('input[name="website"]');
+        const messageInput = form.querySelector('.hidden-message');
+        if (websiteInput && messageInput) {
+          messageInput.value = 'Запит на безкоштовний SEO-аудит.\nСайт: ' + (websiteInput.value || 'Не вказано');
+        }
+      }
+
       const res = await fetch(targetUrl, {
         method: 'POST',
         body: serializeForm(form)
@@ -120,10 +131,20 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!res.ok || !json.ok) {
         throw new Error(json.error || 'Сталася помилка. Спробуйте пізніше.');
       }
-      status.textContent = json.message || 'Повідомлення надіслано.';
-      status.classList.add('success');
+      if (isLmForm) {
+        form.style.display = 'none';
+        if (lmSuccess) lmSuccess.style.display = 'block';
+      } else {
+        status.textContent = json.message || 'Повідомлення надіслано.';
+        status.classList.add('success');
+      }
       form.reset();
     } catch (err) {
+      if (isLmForm) {
+        if (btn) { btn.disabled = false; btn.textContent = prevText; }
+        alert(err.message || 'Сталася помилка. Спробуйте пізніше.');
+        return;
+      }
       status.textContent = err.message || 'Сталася помилка. Спробуйте пізніше.';
       status.classList.add('error');
     } finally {
@@ -132,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function initContactForms() {
-    document.querySelectorAll('form.contact-form, form.contact-form-new').forEach(form => {
+    document.querySelectorAll('form.contact-form, form.contact-form-new, form.lm-form').forEach(form => {
       if (form.dataset.enhanced === '1') return;
       form.dataset.enhanced = '1';
       form.addEventListener('submit', function(e) {
