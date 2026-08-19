@@ -6,6 +6,7 @@
 import os
 import shutil
 import re
+import datetime
 
 def minify_css(css_content):
     css_content = re.sub(r'/\*.*?\*/', '', css_content, flags=re.DOTALL)
@@ -66,7 +67,7 @@ def generate_service_index_page(service_slug, service_name):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ service_name }} | Програміст Роман (RomanDev)</title>
+    <title>{{ service_name }} [{{ current_year }}] 🚀 | Програміст Роман</title>
     <meta name="description" content="Професійні послуги: {{ service_name_lower }}. {{ service_description }} Замовте {{ service_name_lower_acc }} у програміста Романа.">
     
     <!-- Canonical -->
@@ -89,43 +90,76 @@ def generate_service_index_page(service_slug, service_name):
     <link rel="stylesheet" href="/css/style.css?ver=3">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="{{ service_name }} | Програміст Роман (RomanDev)">
+    <meta property="og:title" content="{{ service_name }} [{{ current_year }}] 🚀 | Програміст Роман">
     <meta property="og:description" content="Професійні послуги: {{ service_name_lower }}. {{ service_description }} Замовте {{ service_name_lower_acc }} у програміста Романа.">
     <meta property="og:url" content="https://programist.matviy.pp.ua/{{ service_slug }}/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Програміст Роман">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ service_name }} [{{ current_year }}] 🚀 | Програміст Роман">
+    <meta name="twitter:description" content="Професійні послуги: {{ service_name_lower }}. {{ service_description }}">
+    <meta name="twitter:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Програміст Роман — {{ service_name }}",
-      "url": "https://programist.matviy.pp.ua/{{ service_slug }}/",
-      "description": "Професійні послуги: {{ service_name_lower }}. {{ service_description }}",
-      "telephone": "+380938800822",
-      "email": "info@matviy.pp.ua",
-      "image": "https://programist.matviy.pp.ua/img/og-image.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Львів",
-        "addressCountry": "UA"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Ukraine"
-      },
-      "priceRange": "$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "24"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/romanmatviy/",
-        "https://github.com/romanmatviy"
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://programist.matviy.pp.ua/{{ service_slug }}/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Головна",
+              "item": "https://programist.matviy.pp.ua/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "{{ service_name }}",
+              "item": "https://programist.matviy.pp.ua/{{ service_slug }}/"
+            }
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "Програміст Роман — {{ service_name }}",
+          "url": "https://programist.matviy.pp.ua/{{ service_slug }}/",
+          "description": "Професійні послуги: {{ service_name_lower }}. {{ service_description }}",
+          "telephone": "+380938800822",
+          "email": "info@matviy.pp.ua",
+          "image": "https://programist.matviy.pp.ua/img/og-image.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Львів",
+            "addressCountry": "UA"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Ukraine"
+          },
+          "priceRange": "$$",
+          "offers": {
+            "@type": "Offer",
+            "price": "300",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "24"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/romanmatviy/",
+            "https://github.com/romanmatviy"
+          ]
+        }
       ]
     }
     </script>
@@ -557,7 +591,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ service_name }} в {{ geo_name }} | Програміст Роман (RomanDev)</title>
+    <title>{{ service_name }} в {{ geo_name }} [{{ current_year }}] 🚀 | Програміст Роман</title>
     <meta name="description" content="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}. {{ service_description }} Замовте {{ service_name_lower_acc }} у програміста Романа.">
     
     <!-- Canonical -->
@@ -569,17 +603,96 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap">
+    </noscript>
     
     <!-- Styles -->
+    <link rel="preload" href="/css/style.css?ver=3" as="style">
     <link rel="stylesheet" href="/css/style.css?ver=3">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="{{ service_name }} в {{ geo_name }} | Програміст Роман (RomanDev)">
+    <meta property="og:title" content="{{ service_name }} в {{ geo_name }} [{{ current_year }}] 🚀 | Програміст Роман">
     <meta property="og:description" content="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}. {{ service_description }} Замовте {{ service_name_lower_acc }} у програміста Романа.">
     <meta property="og:url" content="https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="/img/og-image.jpg">
+    <meta property="og:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
+    <meta property="og:site_name" content="Програміст Роман">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ service_name }} в {{ geo_name }} [{{ current_year }}] 🚀 | Програміст Роман">
+    <meta name="twitter:description" content="Професійні послуги: {{ service_name_lower }} в {{ geo_name }}. {{ service_description }}">
+    <meta name="twitter:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Головна",
+              "item": "https://programist.matviy.pp.ua/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "{{ service_name }}",
+              "item": "https://programist.matviy.pp.ua/{{ service_slug }}/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Україна",
+              "item": "https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/"
+            }
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "Програміст Роман — {{ service_name }} в {{ geo_name }}",
+          "url": "https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/",
+          "description": "Професійні послуги: {{ service_name_lower }} в {{ geo_name }}. {{ service_description }}",
+          "telephone": "+380938800822",
+          "email": "info@matviy.pp.ua",
+          "image": "https://programist.matviy.pp.ua/img/og-image.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "{{ geo_name }}",
+            "addressCountry": "UA"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Ukraine"
+          },
+          "priceRange": "$$",
+          "offers": {
+            "@type": "Offer",
+            "price": "300",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "24"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/romanmatviy/",
+            "https://github.com/romanmatviy"
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -888,7 +1001,7 @@ def generate_geo_index_page(service_slug, service_name, geo_slug, geo_name):
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 Програміст Роман. Всі права захищені.
+                &copy; {{ current_year }} Програміст Роман. Всі права захищені.
             </div>
         </div>
     </footer>
@@ -990,6 +1103,7 @@ window.addEventListener('touchstart', loadTawkTo, { once: true, passive: true })
     
     # Заповнюємо шаблон
     page_content = template
+    page_content = page_content.replace("{{ current_year }}", str(datetime.datetime.now().year))
     page_content = page_content.replace("{{ service_slug }}", service_slug)
     page_content = page_content.replace("{{ geo_slug }}", geo_slug)
     page_content = page_content.replace("{{ service_name }}", service_name)

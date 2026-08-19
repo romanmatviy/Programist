@@ -3,6 +3,8 @@
 Генерує сторінки /programist/ukraine/{city}/ для запитів "програміст [місто]"
 """
 import os
+import shutil
+import datetime
 
 BASE_URL = "https://programist.matviy.pp.ua"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -40,6 +42,7 @@ def generate_page(city_slug, city_data):
     city_in = city_data['in']
     lat, lon = city_data['coords']
     city_desc = city_data['desc']
+    current_year = datetime.datetime.now().year
 
     # Пов'язані послуги
     related_services = [
@@ -68,8 +71,8 @@ def generate_page(city_slug, city_data):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Програміст {name} | Роман Матвій — від $300 ✓ 500+ проєктів</title>
-    <meta name="description" content="Програміст {city_in} — Роман Матвій. Розробка сайтів, інтернет-магазинів, CRM від $300. 10+ років досвіду, 500+ проєктів. Безкоштовна консультація ✓">
+    <title>Програміст {name} [{current_year}] 🚀 | Роман Матвій — від $300 ✓ 500+ проєктів</title>
+    <meta name="description" content="Програміст {city_in}. Розробка сайтів, інтернет-магазинів, CRM від $300. 10+ років досвіду, 500+ проєктів. Безкоштовна консультація ✓">
 
     <!-- Canonical -->
     <link rel="canonical" href="{BASE_URL}/programist/ukraine/{city_slug}/">
@@ -85,10 +88,17 @@ def generate_page(city_slug, city_data):
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Програміст {name} | Роман Матвій">
+    <meta property="og:title" content="Програміст {name} [{current_year}] 🚀 | Роман Матвій">
     <meta property="og:description" content="Програміст {city_in} — Роман Матвій. Розробка сайтів від $300. Безкоштовна консультація.">
     <meta property="og:url" content="{BASE_URL}/programist/ukraine/{city_slug}/">
     <meta property="og:image" content="{BASE_URL}/img/og-image.jpg">
+    <meta property="og:site_name" content="Програміст Роман">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Програміст {name} [{current_year}] 🚀 | Роман Матвій">
+    <meta name="twitter:description" content="Програміст {city_in}. Розробка сайтів від $300. Безкоштовна консультація.">
+    <meta name="twitter:image" content="{BASE_URL}/img/og-image.jpg">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -105,6 +115,30 @@ def generate_page(city_slug, city_data):
             "https://www.linkedin.com/in/romanmatviy/",
             "https://github.com/romanmatviy",
             "https://t.me/MatviyRoman"
+          ]
+        }},
+        {{
+          "@type": "BreadcrumbList",
+          "@id": "{BASE_URL}/programist/ukraine/{city_slug}/#breadcrumb",
+          "itemListElement": [
+            {{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Головна",
+              "item": "{BASE_URL}/"
+            }},
+            {{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Програміст",
+              "item": "{BASE_URL}/programist/ukraine/"
+            }},
+            {{
+              "@type": "ListItem",
+              "position": 3,
+              "name": "{name}",
+              "item": "{BASE_URL}/programist/ukraine/{city_slug}/"
+            }}
           ]
         }},
         {{
@@ -128,6 +162,12 @@ def generate_page(city_slug, city_data):
           "priceRange": "$$",
           "openingHours": "Mo-Fr 09:00-18:00",
           "image": "{BASE_URL}/img/programist-fullstack-Roman-Senior-Developer.png",
+          "offers": {{
+            "@type": "Offer",
+            "price": "300",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }},
           "aggregateRating": {{
             "@type": "AggregateRating",
             "ratingValue": "5",
@@ -515,13 +555,28 @@ def generate_index_page():
         for slug, data in sorted(cities.items(), key=lambda x: x[1]['name'])
     ])
 
+    current_year = datetime.datetime.now().year
     return f'''<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Програміст Україна | Роман Матвій — Розробка сайтів по містах</title>
+    <title>Програміст Україна [{current_year}] 🚀 | Роман Матвій — Розробка сайтів по містах</title>
     <meta name="description" content="Програміст-фрілансер Роман Матвій. Розробка сайтів по всій Україні від $300. Виберіть своє місто та замовте безкоштовну консультацію.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Програміст Україна [{current_year}] 🚀 | Роман Матвій">
+    <meta property="og:description" content="Програміст-фрілансер Роман Матвій. Розробка сайтів по всій Україні від $300.">
+    <meta property="og:url" content="{BASE_URL}/programist/ukraine/">
+    <meta property="og:image" content="{BASE_URL}/img/og-image.jpg">
+    <meta property="og:site_name" content="Програміст Роман">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Програміст Україна [{current_year}] 🚀 | Роман Матвій">
+    <meta name="twitter:description" content="Програміст-фрілансер Роман Матвій. Розробка сайтів по всій Україні від $300.">
+    <meta name="twitter:image" content="{BASE_URL}/img/og-image.jpg">
     <link rel="canonical" href="{BASE_URL}/programist/ukraine/">
     <link rel="icon" href="{BASE_URL}/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">

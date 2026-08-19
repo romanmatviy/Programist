@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO оптимізація | Програміст Роман (RomanDev)</title>
+    <title>SEO оптимізація [{{ current_year }}] 🚀 | Програміст Роман</title>
     <meta name="description" content="Професійні послуги: seo оптимізація. Внутрішня та зовнішня SEO оптимізація для виводу в ТОП Google. Замовте SEO оптимізацію у програміста Романа.">
     
     <!-- Canonical -->
@@ -26,43 +26,76 @@
     <link rel="stylesheet" href="/css/style.css?ver=3">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="SEO оптимізація | Програміст Роман (RomanDev)">
+    <meta property="og:title" content="SEO оптимізація [{{ current_year }}] 🚀 | Програміст Роман">
     <meta property="og:description" content="Професійні послуги: seo оптимізація. Внутрішня та зовнішня SEO оптимізація для виводу в ТОП Google. Замовте SEO оптимізацію у програміста Романа.">
     <meta property="og:url" content="https://programist.matviy.pp.ua/seo-optimizatsiya/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Програміст Роман">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SEO оптимізація [{{ current_year }}] 🚀 | Програміст Роман">
+    <meta name="twitter:description" content="Професійні послуги: seo оптимізація. Внутрішня та зовнішня SEO оптимізація для виводу в ТОП Google.">
+    <meta name="twitter:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Програміст Роман — SEO оптимізація",
-      "url": "https://programist.matviy.pp.ua/seo-optimizatsiya/",
-      "description": "Професійні послуги: seo оптимізація. Внутрішня та зовнішня SEO оптимізація для виводу в ТОП Google.",
-      "telephone": "+380938800822",
-      "email": "info@matviy.pp.ua",
-      "image": "https://programist.matviy.pp.ua/img/og-image.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Львів",
-        "addressCountry": "UA"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Ukraine"
-      },
-      "priceRange": "$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "24"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/romanmatviy/",
-        "https://github.com/romanmatviy"
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://programist.matviy.pp.ua/seo-optimizatsiya/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Головна",
+              "item": "https://programist.matviy.pp.ua/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "SEO оптимізація",
+              "item": "https://programist.matviy.pp.ua/seo-optimizatsiya/"
+            }
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "Програміст Роман — SEO оптимізація",
+          "url": "https://programist.matviy.pp.ua/seo-optimizatsiya/",
+          "description": "Професійні послуги: seo оптимізація. Внутрішня та зовнішня SEO оптимізація для виводу в ТОП Google.",
+          "telephone": "+380938800822",
+          "email": "info@matviy.pp.ua",
+          "image": "https://programist.matviy.pp.ua/img/og-image.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Львів",
+            "addressCountry": "UA"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Ukraine"
+          },
+          "priceRange": "$$",
+          "offers": {
+            "@type": "Offer",
+            "price": "300",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "24"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/romanmatviy/",
+            "https://github.com/romanmatviy"
+          ]
+        }
       ]
     }
     </script>

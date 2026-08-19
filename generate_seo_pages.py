@@ -6,6 +6,7 @@
 import os
 import shutil
 import re
+import datetime
 
 def minify_css(css_content):
     css_content = re.sub(r'/\*.*?\*/', '', css_content, flags=re.DOTALL)
@@ -73,11 +74,25 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ service_name }} {{ city_in }} | Програміст Роман (RomanDev)</title>
+    <title>{{ service_name }} {{ city_in }} [{{ current_year }}] 🚀 | Програміст Роман</title>
     <meta name="description" content="Професійні послуги: {{ service_name_lower }} {{ city_in }}. {{ service_description }} Замовте {{ service_name_lower_acc }} у програміста Романа.">
     
     <!-- Canonical -->
     <link rel="canonical" href="https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/{{ city_slug }}/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ service_name }} {{ city_in }} [{{ current_year }}] 🚀 | Програміст Роман">
+    <meta property="og:description" content="Професійні послуги: {{ service_name_lower }} {{ city_in }}. {{ service_description }} Замовте {{ service_name_lower_acc }} у програміста Романа.">
+    <meta property="og:url" content="https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/{{ city_slug }}/">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
+    <meta property="og:site_name" content="Програміст Роман">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ service_name }} {{ city_in }} [{{ current_year }}] 🚀 | Програміст Роман">
+    <meta name="twitter:description" content="Професійні послуги: {{ service_name_lower }} {{ city_in }}. {{ service_description }}">
+    <meta name="twitter:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
     
     <!-- Favicon -->
     <link rel="icon" href="https://programist.matviy.pp.ua/img/favicon.ico" type="image/x-icon">
@@ -109,61 +124,38 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
           ]
         },
         {
-          "@type": "ProfessionalService",
-          "@id": "https://programist.matviy.pp.ua/#organization",
-          "name": "Програміст Роман — {{ service_name }} {{ city_in }}",
-          "description": "{{ title }} Професійні послуги веб-розробника. Якісно та вчасно.",
-          "url": "https://programist.matviy.pp.ua/{{ service_slug }}/ukraine/{{ city_slug }}/",
-          "telephone": "+380938800822",
-          "email": "info@matviy.pp.ua",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "{{ city_name }}",
-            "addressCountry": "UA"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": {{ geo_lat }},
-            "longitude": {{ geo_lon }}
-          },
-          "areaServed": {
-            "@type": "City",
-            "name": "{{ city_name }}"
-          },
-          "priceRange": "$$",
-          "founder": {
-            "@id": "https://programist.matviy.pp.ua/#person"
-          },
-          "openingHours": "Mo-Fr 09:00-18:00",
-          "image": "https://programist.matviy.pp.ua/img/programist-fullstack-Roman-Senior-Developer.png",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "24"
-          },
-          "review": [
+          "@type": "BreadcrumbList",
+          "@id": "https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/{{ city_slug }}/#breadcrumb",
+          "itemListElement": [
             {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Олександр Ковальчук" },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "Роман розробив для нас інтернет-магазин на PrestaShop. Все було зроблено професійно та в термін. Особливо вражений увагою до SEO-деталей та швидкістю роботи сайту."
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Головна",
+              "item": "https://programist.matviy.pp.ua/"
             },
             {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Марина Мельник" },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "Працюємо з Романом над підтримкою нашого корпоративного сайту на Laravel. Дуже задоволені оперативністю та якістю коду. Рекомендую як надійного розробника."
+              "@type": "ListItem",
+              "position": 2,
+              "name": "{{ service_name }}",
+              "item": "https://programist.matviy.pp.ua/{{ service_slug }}/"
             },
             {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Сергій Притула" },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "reviewBody": "Замовляли SEO-оптимізацію та редизайн сайту на WordPress. Позиції в Google значно виросли вже за перший місяць після запуску нової версії. Дякуємо за роботу!"
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Україна",
+              "item": "https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "{{ city_name }}",
+              "item": "https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/{{ city_slug }}/"
             }
           ]
         },
         {
           "@type": "FAQPage",
+          "@id": "https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/{{ city_slug }}/#faq",
           "mainEntity": [
             {
               "@type": "Question",
@@ -222,6 +214,66 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
               }
             }
           ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://programist.matviy.pp.ua/#organization",
+          "name": "Програміст Роман — {{ service_name }} {{ city_in }}",
+          "description": "{{ service_name }} {{ city_in }}. Професійні послуги веб-розробника. Якісно та вчасно.",
+          "url": "https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/{{ city_slug }}/",
+          "telephone": "+380938800822",
+          "email": "info@matviy.pp.ua",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "{{ city_name }}",
+            "addressCountry": "UA"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": {{ geo_lat }},
+            "longitude": {{ geo_lon }}
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "{{ city_name }}"
+          },
+          "priceRange": "$$",
+          "founder": {
+            "@id": "https://programist.matviy.pp.ua/#person"
+          },
+          "openingHours": "Mo-Fr 09:00-18:00",
+          "image": "https://programist.matviy.pp.ua/img/programist-fullstack-Roman-Senior-Developer.png",
+          "offers": {
+            "@type": "Offer",
+            "price": "300",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "24"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Олександр Ковальчук" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Роман розробив для нас інтернет-магазин на PrestaShop. Все було зроблено професійно та в термін. Особливо вражений увагою до SEO-деталей та швидкістю роботи сайту."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Марина Мельник" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Працюємо з Романом над підтримкою нашого корпоративного сайту на Laravel. Дуже задоволені оперативністю та якістю коду. Рекомендую як надійного розробника."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Сергій Притула" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Замовляли SEO-оптимізацію та редизайн сайту на WordPress. Позиції в Google значно виросли вже за перший місяць після запуску нової версії. Дякуємо за роботу!"
+            }
+          ]
         }
       ]
     }
@@ -230,15 +282,6 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <!-- Styles -->
     <link rel="preload" href="/css/style.css?ver=3" as="style">
     <link rel="stylesheet" href="/css/style.css?ver=3">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="{{ service_name }} {{ city_in }} | Програміст Роман (RomanDev)">
-    <meta property="og:description" content="Професійні послуги: {{ service_name_lower }} {{ city_in }}. {{ service_description }} Замовте {{ service_name_lower_acc }} у програміста Романа.">
-    <meta property="og:url" content="https://programist.matviy.pp.ua/{{ service_slug }}/{{ geo_slug }}/{{ city_slug }}/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://programist.matviy.pp.ua/img/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
 </head>
 <body>
     <!-- Header -->
@@ -676,7 +719,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2026 Програміст Роман. Всі права захищені.
+                &copy; {{ current_year }} Програміст Роман. Всі права захищені.
             </div>
         </div>
     </footer>
@@ -885,6 +928,7 @@ def generate_seo_page(service_slug, service_name, geo_slug, geo_name, city_slug,
     
     # Заповнюємо шаблон
     page_content = PAGE_TEMPLATE
+    page_content = page_content.replace("{{ current_year }}", str(datetime.datetime.now().year))
     page_content = page_content.replace("{{ service_slug }}", service_slug)
     page_content = page_content.replace("{{ geo_slug }}", geo_slug)
     page_content = page_content.replace("{{ city_slug }}", city_slug)
