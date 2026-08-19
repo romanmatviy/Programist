@@ -213,6 +213,27 @@
                 </div>
             </div>
         </section>
+        <!-- Lead Magnet Banner -->
+        <section class="container">
+            <div class="lm-banner-wrap">
+                <div class="lm-text">
+                    <h3>Отримайте безкоштовний SEO-аудит вашого сайту</h3>
+                    <p>Дізнайтесь, чому ваш сайт втрачає клієнтів у Google та як це виправити. Залиште email та адресу сайту, і я надішлю вам детальний звіт.</p>
+                </div>
+                <div class="lm-form-wrap">
+                    <form class="lm-form" action="/contact.php" method="POST">
+                        <input type="hidden" name="source" value="SEO Audit Banner - OpenCart в Україна">
+                        <input type="hidden" name="message" class="hidden-message" value="">
+                        <input type="text" name="name" placeholder="Ваше ім'я" required>
+                        <input type="email" name="email" placeholder="Ваш Email" required>
+                        <input type="url" name="website" placeholder="Посилання на сайт (напр. https://...)" required>
+                        <button type="submit">Отримати аудит 🚀</button>
+                    </form>
+                    <div class="lm-success">Дякуємо! Ваша заявка прийнята. Я надішлю аудит найближчим часом.</div>
+                </div>
+            </div>
+        </section>
+        
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
@@ -363,5 +384,74 @@ window.addEventListener('mousemove', loadTawkTo, { once: true, passive: true });
 window.addEventListener('touchstart', loadTawkTo, { once: true, passive: true });
 </script>
 <!--End of Tawk.to Script-->
+
+    <script>
+    // Lead Magnet Logic
+    setTimeout(() => {
+        const modal = document.getElementById('leadMagnetModal');
+        if (modal && !localStorage.getItem('lm_closed')) {
+            modal.classList.add('show');
+        }
+    }, 15000);
+
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.lm-close') || e.target.classList.contains('lm-modal')) {
+            const modal = document.getElementById('leadMagnetModal');
+            if (modal) {
+                modal.classList.remove('show');
+                localStorage.setItem('lm_closed', 'true');
+            }
+        }
+    });
+
+    document.querySelectorAll('.lm-form').forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const websiteInput = form.querySelector('input[name="website"]');
+            const messageInput = form.querySelector('.hidden-message');
+            const website = websiteInput ? websiteInput.value : 'Не вказано';
+            messageInput.value = "Запит на безкоштовний SEO-аудит.\nСайт: " + website;
+            const formData = new FormData(form);
+            btn.disabled = true;
+            btn.textContent = 'Відправка...';
+            try {
+                const res = await fetch(form.action, { method: 'POST', body: formData });
+                if (res.ok) {
+                    form.style.display = 'none';
+                    const successMsg = form.nextElementSibling;
+                    if (successMsg && successMsg.classList.contains('lm-success')) {
+                        successMsg.style.display = 'block';
+                    }
+                } else {
+                    alert('Сталася помилка.');
+                }
+            } catch (err) {
+                alert('Сталася помилка.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Отримати аудит 🚀';
+            }
+        });
+    });
+    </script>
+    
+    <!-- Lead Magnet Modal -->
+    <div id="leadMagnetModal" class="lm-modal">
+        <div class="lm-modal-content">
+            <button class="lm-close">&times;</button>
+            <h3>🎁 Безкоштовний SEO-аудит</h3>
+            <p>Дізнайтесь, чому ваш сайт втрачає клієнтів у Google. Залиште email та адресу сайту, і я надішлю вам детальний звіт.</p>
+            <form class="lm-form" action="/contact.php" method="POST">
+                <input type="hidden" name="source" value="SEO Audit Modal - OpenCart в Україна">
+                <input type="hidden" name="message" class="hidden-message" value="">
+                <input type="text" name="name" placeholder="Ваше ім'я" required>
+                <input type="email" name="email" placeholder="Ваш Email" required>
+                <input type="url" name="website" placeholder="Посилання на сайт (напр. https://...)" required>
+                <button type="submit">Отримати аудит 🚀</button>
+            </form>
+            <div class="lm-success">Дякуємо! Ваша заявка прийнята. Я надішлю аудит найближчим часом.</div>
+        </div>
+    </div>
 </body>
 </html>
