@@ -27,7 +27,8 @@ services = [
     "crm-erp",
     "ux-ui-design",
     "korporatyvnyi-sait",
-    "landing-page"
+    "landing-page",
+    "programist"
 ]
 
 # Список гео (поки тільки Україна)
